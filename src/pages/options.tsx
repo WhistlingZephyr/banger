@@ -9,25 +9,33 @@ const App = (): JSX.Element => {
     const [currentEngine, setCurrentEngine] = useState('');
     const [luckyUrl, setLuckyUrl] = useState('');
     const [backend, setBackend] = useState('');
+    const [savedText, setSavedText] = useState('Save');
 
     const engineSelectionRef = useRef<HTMLSelectElement>(null);
     const backendSelectionRef = useRef<HTMLSelectElement>(null);
     const luckyUrlRef = useRef<HTMLInputElement>(null);
     const onSave = async (): Promise<void> => {
+        setSavedText('Saving...');
+
         if (currentEngine !== engineSelectionRef.current!.value) {
             setCurrentEngine(engineSelectionRef.current!.value);
-            updateEngine(engineSelectionRef.current!.value);
+            await updateEngine(engineSelectionRef.current!.value);
         }
 
         if (luckyUrl !== luckyUrlRef.current!.value) {
             setLuckyUrl(luckyUrlRef.current!.value);
-            updateLuckyBangUrl(luckyUrlRef.current!.value);
+            await updateLuckyBangUrl(luckyUrlRef.current!.value);
         }
 
         if (backend !== backendSelectionRef.current!.value) {
             setBackend(backendSelectionRef.current!.value);
-            updateBackend(backendSelectionRef.current!.value as BackendId);
+            await updateBackend(backendSelectionRef.current!.value as BackendId);
         }
+
+        setSavedText('Saved!');
+        setTimeout(() => {
+            setSavedText('Save');
+        }, 500);
     };
 
     useEffect(() => {
@@ -61,7 +69,7 @@ const App = (): JSX.Element => {
                     <label htmlFor='lucky-url-input'>Lucky bang (!) url:</label>
                     <input id='lucky-url-input' type='text' value={luckyUrl} ref={luckyUrlRef}/>
                 </div>
-                <button className='save-button' onClick={onSave}>Save</button>
+                <button className='save-button' onClick={onSave}>{savedText}</button>
             </>
             : <p className='loading'>Loading list of engines...</p>
         }

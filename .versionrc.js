@@ -1,5 +1,5 @@
 const tracker = {
-    filename: "manifest.json",
+    filename: "static/manifest.json",
     type: "json",
 };
 

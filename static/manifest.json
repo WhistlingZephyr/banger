@@ -2,13 +2,15 @@
     "manifest_version": 2,
     "name": "Banger",
     "description": "Add DuckDuckGo-like !Bangs to any search engine.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "icons": {
         "48": "icons/icon.svg",
         "96": "icons/icon.svg"
     },
     "background": {
-        "scripts": ["background-script.js"],
+        "scripts": [
+            "background-script.js"
+        ],
         "persistent": false
     },
     "browser_specific_settings": {

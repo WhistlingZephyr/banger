@@ -1,5 +1,4 @@
 {
-    "eslint.format.enable": true,
     "[typescript]": {
         "editor.defaultFormatter": "samverschueren.linter-xo"
     },

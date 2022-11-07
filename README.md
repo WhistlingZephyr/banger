@@ -1,6 +1,8 @@
 # Banger
 A FireFox extension that adds DuckDuckGo-like !Bangs to any search engine.
 
+Install this extension at https://addons.mozilla.org/en-US/firefox/addon/banger/
+
 Banger fetches list of bangs from DuckDuckGo and Brave, letting you choose which backend to use.
 All processing is done client-side, so bang execution is faster than usual.
 

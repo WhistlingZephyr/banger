@@ -1,0 +1,20 @@
+.main {
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    justify-items: flex-start;
+}
+
+#lucky-url-input {
+    width: 20rem;
+}
+
+.save-button {
+    width: max-content;
+}

@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "name": "Banger",
+    "description": "Add DuckDuckGo-like !Bangs to any search engine.",
+    "version": "0.1.0",
+    "icons": {
+        "48": "icons/icon.svg",
+        "96": "icons/icon.svg"
+    },
+    "background": {
+        "scripts": ["background-script.js"],
+        "persistent": false
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{72e040d8-c3e5-4750-94d4-45b9b2489d19}"
+        }
+    },
+    "permissions": [
+        "browserSettings",
+        "search",
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "https://banger/search?*",
+        "https://search.brave.com/bang/data",
+        "https://duckduckgo.com/bang.js"
+    ],
+    "options_ui": {
+        "page": "pages/options.html",
+        "browser_style": true
+    },
+    "chrome_settings_overrides": {
+        "search_provider": {
+            "name": "Banger search",
+            "keyword": "@bang",
+            "favicon_url": "https://raw.githubusercontent.com/WhistlingZephyr/banger/main/static/icons/icon.svg",
+            "search_url": "https://banger/search?q={searchTerms}",
+            "encoding": "UTF-8",
+            "is_default": true
+        }
+    }
+}

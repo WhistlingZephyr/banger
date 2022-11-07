@@ -1,9 +1,12 @@
-const tracker = {
+const trackers = [{
     filename: "static/manifest.json",
     type: "json",
-};
+}, {
+    filename: "package.json",
+    type: "json",
+}];
 
 module.exports = {
-    bumpFiles: [tracker],
-    packageFiles: [tracker],
+    bumpFiles: trackers,
+    packageFiles: trackers,
 };

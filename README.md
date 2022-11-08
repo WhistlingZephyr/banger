@@ -1,5 +1,5 @@
 # Banger
-![Icon](dist/icons/icon.svg)
+![Icon](dist/icons/icon-96.png)
 
 A FireFox extension that adds DuckDuckGo-like !Bangs to any search engine.
 

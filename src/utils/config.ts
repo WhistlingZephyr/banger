@@ -1,7 +1,14 @@
-export async function loadConfig<T extends StorageValue>(id: string, initial: T): Promise<T> {
+export async function loadConfig<T extends StorageValue>(
+    id: string,
+    initial: T,
+    validate?: (value: T) => boolean,
+): Promise<T> {
     try {
         const result = await browser.storage.sync.get(id);
-        if (!result[id]) {
+        if (
+            !result[id]
+            || (typeof validate === 'function' && !validate(result[id] as T))
+        ) {
             await browser.storage.sync.set({[id]: initial});
             return initial;
         }

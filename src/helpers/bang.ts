@@ -4,10 +4,11 @@ import {loadConfig, updateConfig} from '../utils/config';
 
 export type Backend = DuckDuckGo | Brave;
 export type BackendId = 'brave' | 'ddg';
+const backendList = new Set(['brave', 'ddg']);
 let backend: DuckDuckGo | Brave;
 
 export async function getBackend(): Promise<BackendId> {
-    const id = await loadConfig<BackendId>('backend', 'ddg');
+    const id = await loadConfig<BackendId>('backend', 'ddg', value => backendList.has(value));
     return id;
 }
 
@@ -23,7 +24,7 @@ export async function loadBackend(): Promise<void> {
 }
 
 export async function updateBackend(id: BackendId): Promise<void> {
-    if (!['brave', 'ddg'].includes(id)) {
+    if (!backendList.has(id)) {
         throw new Error(`Invalid backend id "${id}"`);
     }
 

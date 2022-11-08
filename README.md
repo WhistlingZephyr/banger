@@ -1,4 +1,6 @@
 # Banger
+![Icon](dist/icons/icon.svg)
+
 A FireFox extension that adds DuckDuckGo-like !Bangs to any search engine.
 
 Install this extension at https://addons.mozilla.org/en-US/firefox/addon/banger/

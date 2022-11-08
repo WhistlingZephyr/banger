@@ -10,8 +10,7 @@
     "background": {
         "scripts": [
             "background-script.js"
-        ],
-        "persistent": false
+        ]
     },
     "browser_specific_settings": {
         "gecko": {

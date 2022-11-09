@@ -70,6 +70,7 @@ export default abstract class Backend<T> {
     /**
      * Return the redirect url if available
      * @param query The search query
+     * @returns The redirect url
      */
     async processQuery(query: string): Promise<string | undefined> {
         const bangShortcut = Backend.extractBang(query);

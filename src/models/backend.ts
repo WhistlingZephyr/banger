@@ -8,6 +8,15 @@ export type Bang = {
 };
 
 export default abstract class Backend<T> {
+    /**
+     * Extract bang strring from given query
+     * @param query The current search query
+     * @returns The matched bang string, or undefined
+     */
+    static extractBang(query: string): string | undefined {
+        return (/(?<=!)\S+|\S+(?=!)/.exec(query))?.[0].toLowerCase();
+    }
+
     bangs: Bang[] = [];
     bangMap: Record<string, number> = {};
     abstract url: string;
@@ -59,20 +68,11 @@ export default abstract class Backend<T> {
     }
 
     /**
-     * Extract bang strring from given query
-     * @param query The current search query
-     * @returns The matched bang string, or undefined
-     */
-    extractBang(query: string): string | undefined {
-        return (/(?<=!)\S+|\S+(?=!)/.exec(query))?.[0].toLowerCase();
-    }
-
-    /**
      * Return the redirect url if available
      * @param query The search query
      */
     async processQuery(query: string): Promise<string | undefined> {
-        const bangShortcut = this.extractBang(query);
+        const bangShortcut = Backend.extractBang(query);
 
         if (!bangShortcut) {
             if (/!\s+\S+|\S+\s+!/.test(query)) {

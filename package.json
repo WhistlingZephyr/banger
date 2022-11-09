@@ -25,7 +25,7 @@
     "test:unit": "jest",
     "test": "npm run lint && npm run test:unit",
     "start:ext": "web-ext run --devtools",
-    "start": "concurrently -k npm:watch npm:start:ext",
+    "start": "npm run build && concurrently -k npm:watch npm:start:ext",
     "sign": "npm run build && env-cmd -x web-ext sign --api-key=\\$FIREFOX_API_KEY --api-secret=\\$FIREFOX_API_SECRET",
     "prepare": "husky install",
     "release": "standard-version --sign",

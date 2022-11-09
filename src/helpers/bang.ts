@@ -12,17 +12,6 @@ export async function getBackend(): Promise<BackendId> {
     return id;
 }
 
-export async function loadBackend(): Promise<void> {
-    if (backend) {
-        backend.unhook();
-    }
-
-    const id = await getBackend();
-    backend = id === 'brave' ? new Brave() : new DuckDuckGo();
-    await backend.fetch();
-    backend.hook();
-}
-
 export async function updateBackend(id: BackendId): Promise<void> {
     if (!backendList.has(id)) {
         throw new Error(`Invalid backend id "${id}"`);
@@ -32,4 +21,19 @@ export async function updateBackend(id: BackendId): Promise<void> {
         backend: id,
     });
     await loadBackend();
+}
+
+export function getBackendInstance(): Backend {
+    return backend;
+}
+
+export async function loadBackend(): Promise<void> {
+    if (backend) {
+        backend.unhook();
+    }
+
+    const id = await getBackend();
+    backend = id === 'brave' ? new Brave() : new DuckDuckGo();
+    await backend.fetch();
+    backend.hook();
 }

@@ -4,17 +4,41 @@
     display: flex;
     flex-direction: column;
 }
-
 .input-container {
     display: flex;
     gap: 1rem;
-    justify-items: flex-start;
 }
-
-#lucky-url-input {
+.url-input {
     width: 20rem;
 }
-
+.url-input.error {
+    border: 1px solid red;
+}
+.message.error {
+    color: red;
+}
+.hidden {
+    display: none;
+}
 .save-button {
     width: max-content;
+}
+.toast {
+    padding: 1rem
+}
+.toast.info {
+    border: 1px solid blue;
+    border-left: 1rem solid blue;
+}
+.toast.success {
+    border: 1px solid green;
+    border-left: 1rem solid green;
+}
+.toast.error {
+    border: 1px solid red;
+    border-left: 1rem solid red;
+}
+.note {
+    width: 100%;
+    text-align: center;
 }

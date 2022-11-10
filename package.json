@@ -2,19 +2,9 @@
   "name": "banger",
   "version": "0.1.4",
   "description": "Add DuckDuckGo-like !Bangs to any search engine.",
-  "targets": {
-    "background": {
-      "source": [
-        "./src/background-script.ts",
-        "./src/pages/options.html"
-      ],
-      "distDir": "./dist",
-      "sourceMap": true
-    }
-  },
   "scripts": {
-    "watch": "parcel watch",
-    "bundle": "parcel build",
+    "watch": "vite build --watch",
+    "bundle": "vite build",
     "build:ext": "web-ext build --overwrite-dest",
     "clean": "rimraf dist/ web-ext-artifacts/",
     "prebuild": "npm run clean && mkdirp dist/",
@@ -62,6 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@preact/preset-vite": "^2.4.0",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^29.2.2",
     "@types/react": "^18.0.25",
@@ -73,7 +64,6 @@
     "jest-webextension-mock": "^3.7.22",
     "lint-staged": "^13.0.3",
     "mkdirp": "^1.0.4",
-    "parcel": "^2.7.0",
     "parcel-reporter-static-files-copy": "^1.4.0",
     "preact": "^10.11.2",
     "react": "^18.2.0",
@@ -81,6 +71,7 @@
     "standard-version": "^9.5.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4",
+    "vite": "^3.2.3",
     "web-ext": "^7.3.1",
     "web-ext-types": "^3.2.1",
     "xo": "^0.52.4"

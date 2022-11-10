@@ -1,6 +1,4 @@
 node_modules/
-lib/
 dist/
 web-ext-artifacts/
-.parcel-cache/
 .env

@@ -5,11 +5,11 @@ import preact from '@preact/preset-vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: resolve(__dirname, 'src/'),
+    root: resolve(__dirname, 'src'),
     publicDir: resolve(__dirname, 'static'),
     build: {
         sourcemap: true,
-        outDir: resolve(__dirname, 'dist/'),
+        outDir: resolve(__dirname, 'dist'),
         rollupOptions: {
             input: {
                 options: resolve(__dirname, 'src/pages/options.html'),

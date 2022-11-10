@@ -11,6 +11,7 @@ module.exports = {
         "unicorn/no-for-loop": "off",
         "capitalized-comments": "off",
         "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off"
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "n/file-extension-in-import": "off"
     }
 };

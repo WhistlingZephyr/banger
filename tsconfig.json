@@ -2,8 +2,12 @@
     "extends": "@tsconfig/recommended/tsconfig.json",
     "compilerOptions": {
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "jsx": "react-jsx",
-        "jsxImportSource": "react",
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "jsxFactory": "h",
+        "jsxFragmentFactory": "Fragment",
+        "noUnusedLocals": true,
         "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
         "skipLibCheck": true,
         "paths": {

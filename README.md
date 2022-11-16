@@ -12,10 +12,10 @@ To learn more about bangs, see https://help.duckduckgo.com/duckduckgo-help-pages
 
 ## Development
 ### Installation
-You must install the required npm packages and setup husky hooks in order to develop this repository.
-1. `npm install`
-2. `npm run prepare`
+You must install the required pnpm packages and setup husky hooks in order to develop this repository.
+1. `pnpm install`
+2. `pnpm run prepare`
 ### Testing
-- `npm run test` to run all tests
-- `npm run watch` to watch source files
-- `npm run start` to start a firefox instance with the current addon build temporarily installed
+- `pnpm run test` to run all tests
+- `pnpm run watch` to watch source files
+- `pnpm run start` to start a firefox instance with the current addon build temporarily installed

@@ -1,4 +1,4 @@
-import {render} from 'preact';
+import {render, type JSX} from 'preact';
 import {useEffect, useRef, useState} from 'preact/hooks';
 import {getEngine, listEngines, updateEngine} from '../helpers/search';
 import {getLuckyBangUrl, updateLuckyBangUrl} from '../helpers/lucky-bang';

@@ -4,16 +4,11 @@
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "preserve",
-        "jsxFactory": "h",
-        "jsxFragmentFactory": "Fragment",
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
         "noUnusedLocals": true,
         "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
         "skipLibCheck": true,
-        "paths": {
-            "react": ["./node_modules/preact/compat/"],
-            "react-dom": ["./node_modules/preact/compat/"]
-        },
         "plugins": [{ "name": "typescript-plugin-css-modules" }]
     }
 }

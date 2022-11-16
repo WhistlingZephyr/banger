@@ -5,7 +5,7 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "jsxImportSource": "preact",
+        "jsxImportSource": "react",
         "noUnusedLocals": true,
         "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
         "skipLibCheck": true,

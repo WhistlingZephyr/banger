@@ -1,5 +1,5 @@
-import {render, type JSX} from 'preact';
-import {useEffect, useRef, useState} from 'preact/hooks';
+import ReactDom from 'react-dom';
+import {useEffect, useRef, useState} from 'react';
 import {getEngine, listEngines, updateEngine} from '../helpers/search';
 import {getLuckyBangUrl, updateLuckyBangUrl} from '../helpers/lucky-bang';
 import {type BackendId, getBackendId, updateBackend} from '../helpers/bang';
@@ -115,4 +115,4 @@ const App = (): JSX.Element => {
     </main>;
 };
 
-render(<App/>, document.querySelector('#app')!);
+ReactDom.render(<App/>, document.querySelector('#app'));

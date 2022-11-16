@@ -1,15 +1,15 @@
 /* eslint-disable unicorn/prefer-module */
 import {resolve} from 'node:path';
 import {defineConfig} from 'vite';
-import preact from '@preact/preset-vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: resolve(__dirname, 'src'),
+    root: resolve(__dirname, 'src/'),
     publicDir: resolve(__dirname, 'static'),
     build: {
         sourcemap: true,
-        outDir: resolve(__dirname, 'dist'),
+        outDir: resolve(__dirname, 'dist/'),
         rollupOptions: {
             input: {
                 options: resolve(__dirname, 'src/pages/options.html'),
@@ -17,5 +17,8 @@ export default defineConfig({
             },
         },
     },
-    plugins: [preact()],
+    css: {
+        devSourcemap: true,
+    },
+    plugins: [react()],
 });

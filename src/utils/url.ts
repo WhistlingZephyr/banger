@@ -20,7 +20,8 @@ export function isUrl(string: string): boolean {
     }
 
     try {
-        const _url = new URL(string);
+        // eslint-disable-next-line no-new
+        new URL(string);
         return true;
     } catch {
         return false;

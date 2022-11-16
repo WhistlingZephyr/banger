@@ -2,7 +2,7 @@ import {render} from 'preact';
 import {useEffect, useRef, useState} from 'preact/hooks';
 import {getEngine, listEngines, updateEngine} from '../helpers/search';
 import {getLuckyBangUrl, updateLuckyBangUrl} from '../helpers/lucky-bang';
-import {type BackendId, getBackend, updateBackend} from '../helpers/bang';
+import {type BackendId, getBackendId, updateBackend} from '../helpers/bang';
 import {isUrl} from '../utils/url';
 
 const App = (): JSX.Element => {
@@ -67,7 +67,7 @@ const App = (): JSX.Element => {
             setEngines(await listEngines());
             setCurrentEngine(await getEngine());
             setLuckyUrl(await getLuckyBangUrl());
-            setBackend(await getBackend());
+            setBackend(await getBackendId());
         })();
     }, []);
 

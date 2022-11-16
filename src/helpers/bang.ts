@@ -7,7 +7,7 @@ export type BackendId = 'brave' | 'ddg';
 const backendList = new Set(['brave', 'ddg']);
 let backend: DuckDuckGo | Brave;
 
-export async function getBackend(): Promise<BackendId> {
+export async function getBackendId(): Promise<BackendId> {
     const id = await loadConfig<BackendId>('backend', 'ddg', value => backendList.has(value));
     return id;
 }
@@ -32,7 +32,7 @@ export async function loadBackend(): Promise<void> {
         backend.unhook();
     }
 
-    const id = await getBackend();
+    const id = await getBackendId();
     backend = id === 'brave' ? new Brave() : new DuckDuckGo();
     await backend.fetch();
     backend.hook();

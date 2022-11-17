@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build
-      - run: pnpm run build
+        run: pnpm run build
       - name: Submit
         run: cd $DIRECTORY && npx web-ext-submit@7
         env:

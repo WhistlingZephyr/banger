@@ -1,7 +1,7 @@
 env:
   DIRECTORY: dist
 
-name: Release ${{ github.ref_name }}
+name: Release
 on:
   workflow_dispatch: null
 

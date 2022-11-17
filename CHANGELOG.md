@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/WhistlingZephyr/banger/compare/v0.1.4...v0.1.5) (2022-11-17)
+
+
+### Features
+
+* add ui for validation and error handling ([4561762](https://github.com/WhistlingZephyr/banger/commit/4561762574aaafef9661ecf865588b41a17f0bf0))
+* add url validator ([11cd520](https://github.com/WhistlingZephyr/banger/commit/11cd520995ec5c96930c6a62e608f2125fce929f))
+
+
+### Bug Fixes
+
+* fix preact typings ([e943a8d](https://github.com/WhistlingZephyr/banger/commit/e943a8d10f6a293c1ed504dfd8f6aa3ab952e18b))
+* switch to react from preact ([fffda0d](https://github.com/WhistlingZephyr/banger/commit/fffda0d484eb21b992af140990cd21d0f7a1f24d))
+
 ### [0.1.4](https://github.com/WhistlingZephyr/banger/compare/v0.1.3...v0.1.4) (2022-11-08)
 
 

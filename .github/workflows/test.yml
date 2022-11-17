@@ -36,8 +36,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build
-      - run: npm run build --if-present
+        run: pnpm run build
       - name: Lint
-      - run: npm run lint
+        run: pnpm run lint
       - name: Unit test
-      - run: npm run test
+        run: pnpm run test

@@ -34,6 +34,7 @@
 
 .inputControl:hover {
     background-color: var(--control-hover-color);
+    cursor: text;
 }
 
 .inputControl.error {

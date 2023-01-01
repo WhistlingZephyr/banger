@@ -10,6 +10,7 @@
 
 .button:hover {
     background-color: var(--control-hover-color);
+    cursor: pointer;
 }
 
 .button:active {

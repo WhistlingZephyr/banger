@@ -33,6 +33,7 @@
 
 .propertyValue:hover {
     background-color: var(--control-hover-color);
+    cursor: text;
 }
 
 .propertyValue.error {

@@ -26,6 +26,7 @@
 
 .navbarButton:hover {
     background-color: var(--control-hover-color);
+    cursor: pointer;
 }
 
 .navbarButton:active {

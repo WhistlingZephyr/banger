@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/WhistlingZephyr/banger/compare/v0.2.0...v0.2.1) (2023-01-01)
+
+
+### Bug Fixes
+
+* **ci:** fix release action ([389fbb9](https://github.com/WhistlingZephyr/banger/commit/389fbb956ef6f325d2da4e5a79d71f0490a552fc))
+* fix add-on link ([41ea251](https://github.com/WhistlingZephyr/banger/commit/41ea2510323bd6f51761838fb1ba04746617c51d))
+* **ui:** assign correct cursors on hover ([115612c](https://github.com/WhistlingZephyr/banger/commit/115612c0da35cc34baab28311f8b2f4cb3212196))
+
 ## [0.2.0](https://github.com/WhistlingZephyr/banger/compare/v0.1.5...v0.2.0) (2023-01-01)
 
 

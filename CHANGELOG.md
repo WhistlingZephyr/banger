@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/WhistlingZephyr/banger/compare/v0.1.5...v0.2.0) (2023-01-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* add v0.2
+
+### Features
+
+* add v0.2 ([0df8d8d](https://github.com/WhistlingZephyr/banger/commit/0df8d8ddb3d762c8615a333398a6dbf25b97dbfc))
+
 ### [0.1.5](https://github.com/WhistlingZephyr/banger/compare/v0.1.4...v0.1.5) (2022-11-17)
 
 

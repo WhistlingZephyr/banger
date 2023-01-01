@@ -64,6 +64,7 @@ export function BangsDataGrid(): JSX.Element {
                     aria-label="Edit this bang"
                     onClick={(): void => {
                         setCurrentBang(bang);
+                        setCurrentBangShortcut(bang.shortcut);
                         setIsEditing(true);
                         setIsModalOpen(true);
                     }}

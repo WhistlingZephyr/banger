@@ -43,7 +43,10 @@ export async function validateConfig(
 ): Promise<string[]> {
     return (
         await Promise.all(
-            Object.entries({...config, backendId}).map(async ([key, value]) => {
+            Object.entries({
+                ...config,
+                ...('backendId' in config ? {backendId: config.backendId} : {}),
+            }).map(async ([key, value]) => {
                 if (key in bangConfig) {
                     if (
                         await bangConfig[
@@ -51,6 +54,19 @@ export async function validateConfig(
                             // @ts-expect-error Seems like TypeScript won't allow this easily.
                         ].validate(value)
                     ) {
+                        return;
+                    }
+
+                    return (
+                        'Invalid value for key ' +
+                        JSON.stringify(key) +
+                        ': ' +
+                        JSON.stringify(value)
+                    );
+                }
+
+                if (key === 'backendId') {
+                    if (await backendId.validate(value as string)) {
                         return;
                     }
 
@@ -82,7 +98,10 @@ export async function updateConfig(
     return (
         await Promise.all(
             Object.entries(config).map(async ([key, value]) =>
-                (await bangConfig[key as keyof BangConfig].updateValue(
+                (await (key === 'backendId'
+                    ? backendId
+                    : bangConfig[key as keyof BangConfig]
+                ).updateValue(
                     // @ts-expect-error Seems like TypeScript won't allow this easily.
                     value,
                     validate,

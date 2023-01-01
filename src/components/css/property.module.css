@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 30rem;
+    height: 2rem;
+    max-height: 2rem;
+    padding: 0rem 1rem;
+}
+
+.propertyLabel {
+    display: flex;
+    align-items: center;
+}
+
+.propertyValue {
+    display: flex;
+    width: 20rem;
+    height: 2rem;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: var(--control-color);
+    color: var(--foreground-color);
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0rem;
+    padding-left: 1rem;
+    overflow-x: scroll;
+    font-size: small;
+    border: none;
+}
+
+.propertyValue:hover {
+    background-color: var(--control-hover-color);
+}
+
+.propertyValue.error {
+    border: 1px solid var(--error-color);
+}

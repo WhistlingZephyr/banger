@@ -1,0 +1,44 @@
+.navbar {
+    background-color: var(--panel-color);
+    width: 80vw;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 70rem) {
+    .navbar {
+        width: 95vw;
+    }
+}
+
+.navbarButton {
+    background-color: transparent;
+    color: var(--foreground-color);
+    font-size: medium;
+    border: none;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 100%;
+}
+
+.navbarButton:hover {
+    background-color: var(--control-hover-color);
+}
+
+.navbarButton:active {
+    background-color: var(--control-click-color);
+}
+
+.navbarButton.selected:not(:hover, :active) {
+    background-color: var(--control-color);
+}
+
+.icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}

@@ -4,8 +4,8 @@
     "description": "Add DuckDuckGo-like !Bangs to any search engine.",
     "version": "0.1.5",
     "icons": {
-        "48": "icons/icon-48.png",
-        "96": "icons/icon-96.png"
+        "48": "icons/icon.svg",
+        "96": "icons/icon.svg"
     },
     "background": {
         "page": "pages/background.html"
@@ -21,13 +21,21 @@
         "webRequest",
         "webRequestBlocking",
         "storage",
+        "unlimitedStorage",
         "https://banger/search?*",
         "https://search.brave.com/bang/data",
         "https://duckduckgo.com/bang.js"
     ],
+    "content_security_policy": "default-src 'self' data: https://banger https://search.brave.com https://duckduckgo.com; script-src 'self' 'unsafe-eval'",
     "options_ui": {
         "page": "pages/options.html",
-        "browser_style": true
+        "browser_style": false,
+        "open_in_tab": true
+    },
+    "browser_action": {
+        "default_icon": "icons/icon.svg",
+        "default_title": "Banger",
+        "default_popup": "pages/popup.html"
     },
     "chrome_settings_overrides": {
         "search_provider": {
@@ -35,6 +43,7 @@
             "keyword": "@bang",
             "favicon_url": "https://raw.githubusercontent.com/WhistlingZephyr/banger/main/static/icons/icon.svg",
             "search_url": "https://banger/search?q={searchTerms}",
+            "suggest_url": "https://www.google.com/complete/search?client=firefox&q={searchTerms}",
             "encoding": "UTF-8",
             "is_default": true
         }

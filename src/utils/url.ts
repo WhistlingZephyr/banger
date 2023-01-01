@@ -7,11 +7,11 @@ export function withDefaultBase(url: string, base: string): string {
 }
 
 export function withScheme(url: string, scheme: string): string {
-    if (!/^\w+:\/\//.test(url)) {
-        return url.replace(/^(?:\w*:\/\/?)?/, `${scheme}://`);
-    }
+    return url.replace(/^(?:\w*:\/\/)?/, `${scheme}://`);
+}
 
-    return url;
+export function withFormatting(url: string): string {
+    return new URL(url).href;
 }
 
 export function isUrl(string: string): boolean {

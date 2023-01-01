@@ -9,6 +9,12 @@
         "noUnusedLocals": true,
         "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
         "skipLibCheck": true,
-        "plugins": [{ "name": "typescript-plugin-css-modules" }]
-    }
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "allowJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "exclude": ["./node_modules", "./dist", "./web-ext-artifacts"]
 }

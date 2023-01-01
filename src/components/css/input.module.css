@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    height: 2rem;
+    max-height: 2rem;
+}
+
+.inputContainer {
+    width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.inputLabel {
+    display: flex;
+    align-items: center;
+}
+
+.inputControl {
+    display: flex;
+    width: 15rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: var(--control-color);
+    align-items: center;
+    border-radius: 0.5rem;
+    color: var(--foreground-color);
+    padding: 0rem;
+    padding-left: 1rem;
+    border: none;
+}
+
+.inputControl:hover {
+    background-color: var(--control-hover-color);
+}
+
+.inputControl.error {
+    border: 1px solid var(--error-color);
+}
+
+.notesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+}
+
+.note {
+    font-size: small;
+    margin: 0rem;
+}

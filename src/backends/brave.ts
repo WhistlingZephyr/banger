@@ -1,6 +1,6 @@
 import Backend from '../models/backend';
 import type {Bang} from '../models/backend';
-import {withScheme} from '../utils/url';
+import {withFormatting, withScheme} from '../utils/url';
 
 type BraveBang = {
     bang: string;
@@ -22,7 +22,7 @@ export default class Brave extends Backend<BraveBang> {
     bangReplacement = '{query}';
     formatBang = (bang: BraveBang): Bang => ({
         shortcut: bang.bang,
-        domain: withScheme(bang.meta.hostname, bang.meta.scheme),
-        url: bang.url,
+        domain: withFormatting(withScheme(bang.meta.hostname, 'https')),
+        url: withFormatting(withScheme(bang.url, 'https')),
     });
 }

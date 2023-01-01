@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "ecmel.vscode-html-css",
+        "yzhang.markdown-all-in-one",
+        "christian-kohler.npm-intellisense",
+        "samverschueren.linter-xo",
+        "zixuanchen.vitest-explorer",
+        "christian-kohler.path-intellisense"
+    ]
+}

@@ -1,0 +1,53 @@
+.bangModal {
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.backdrop {
+    position: absolute;
+    backdrop-filter: blur(1rem);
+    top: 0rem;
+    left: 0rem;
+    height: 100vh;
+    width: 100vw;
+}
+
+.bangModalContent {
+    padding: 1rem 5rem;
+    background-color: var(--panel-color);
+    border: 0.5rem solid var(--control-color);
+    border-radius: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0rem;
+    color: var(--foreground-color);
+}
+
+.closeIcon {
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+}
+
+.closeIcon:hover {
+    color: var(--error-color);
+}
+
+.body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}

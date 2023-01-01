@@ -1,8 +1,26 @@
-import Brave from '../src/backends/brave';
-import DuckDuckGo from '../src/backends/ddg';
-import type {Backend} from '../src/helpers/bang';
-import {updateLuckyBangUrl} from '../src/helpers/lucky-bang';
-import {getMockedFn} from './get-mocked';
+import {afterEach, beforeAll, describe, expect, vi} from 'vitest';
+import bangs from './backend/bangs';
+import configUpdates from './backend/config-updates';
+import customBangs from './backend/custom-bangs';
+import luckyBang from './backend/lucky-bang';
+import mixedSiteBangs from './backend/mixed-site-bangs';
+import relativeBangs from './backend/relative-bangs';
+import search from './backend/search';
+import siteBangs from './backend/site-bangs';
+import superLuckyBangs from './backend/super-lucky-bangs';
+import superMixedSiteBangs from './backend/super-mixed-site-bangs';
+import {type Backend, bangConfig} from '@/helpers/bang';
+import DuckDuckGo from '@/backends/ddg';
+import Brave from '@/backends/brave';
+
+vi.mock(
+    '../src/models/config-bangs.ts',
+    async () => import('./mocks/config-bangs'),
+);
+vi.mock(
+    '../src/models/config-value.ts',
+    async () => import('./mocks/config-value'),
+);
 
 const fetchBackend = (backend: Backend): void => {
     beforeAll(async () => {
@@ -10,65 +28,57 @@ const fetchBackend = (backend: Backend): void => {
     });
 };
 
-const cleanupStorage = (): void => {
+const registerCleanup = (): void => {
     afterEach(async () => {
-        await browser.storage.sync.clear();
-        getMockedFn(browser.storage.sync.get).mockClear();
-        getMockedFn(browser.storage.sync.set).mockClear();
+        await Promise.all(
+            Object.values(bangConfig).map(async config =>
+                (
+                    config.updateValue as (
+                        value: typeof config.defaultValue,
+                    ) => Promise<boolean>
+                )(await config.getDefaultValue()),
+            ),
+        );
     });
 };
 
-const testDomain = (backend: Backend): void => {
-    test('should resolve domain', async () => {
-        await expect(backend.processQuery('!g')).resolves.toBe('https://www.google.com');
-        await expect(backend.processQuery('!mdn')).resolves.toBe('https://developer.mozilla.org');
-        await expect(backend.processQuery('!abcd')).resolves.toBeUndefined();
-    });
-};
+const createTester =
+    (backend: Backend) =>
+    async (
+        query: string,
+        ...data: Array<['url' | 'search', string]>
+    ): Promise<void> =>
+        expect(backend.processQuery(query)).resolves.toEqual(
+            data.map(([type, entry]) => ({type, entry})),
+        );
 
-const testQuery = (backend: Backend): void => {
-    test('should resolve query', async () => {
-        await expect(backend.processQuery('!g test')).resolves.toBe('https://www.google.com/search?q=test');
-        await expect(backend.processQuery('!mdn test')).resolves.toBe('https://developer.mozilla.org/search?q=test');
-        await expect(backend.processQuery('!abcd test')).resolves.toBeUndefined();
-    });
-};
+type TestRunner = ReturnType<typeof createTester>;
 
-const testLuckySearch = (backend: Backend): void => {
-    test('should handle lucky search', async () => {
-        await expect(backend.processQuery('! google')).resolves.toBe('https://duckduckgo.com/?q=!+google');
-        expect(browser.storage.sync.get).toBeCalledTimes(1);
-        expect(browser.storage.sync.set).toHaveBeenCalledWith({
-            'lucky-bang-url': 'https://duckduckgo.com/?q=!+%s',
-        });
-    });
-    test('should update lucky search url', async () => {
-        await expect(updateLuckyBangUrl('https://duckduckgo.com/?q=%s+!')).resolves.toBeUndefined();
-        await expect(backend.processQuery('! google')).resolves.toBe('https://duckduckgo.com/?q=google+!');
-        expect(browser.storage.sync.get).toBeCalledTimes(1);
-        expect(browser.storage.sync.set).toHaveBeenCalledTimes(1);
-    });
+const testCommon = (runTester: TestRunner): void => {
+    search(runTester);
+    bangs(runTester);
+    luckyBang(runTester);
+    siteBangs(runTester);
+    mixedSiteBangs(runTester);
+    superMixedSiteBangs(runTester);
+    superLuckyBangs(runTester);
+    customBangs(runTester);
+    configUpdates(runTester);
 };
 
 describe('DuckDuckGo bangs', () => {
-    const backend = new DuckDuckGo();
+    const backend = new DuckDuckGo(bangConfig);
+    const runTester = createTester(backend);
     fetchBackend(backend);
-    testDomain(backend);
-    testQuery(backend);
-    testLuckySearch(backend);
-    test('should resolve relative bangs', async () => {
-        await expect(backend.processQuery('!bang')).resolves.toBe('https://duckduckgo.com/bang?q=');
-        await expect(backend.processQuery('!bang test')).resolves.toBe('https://duckduckgo.com/bang?q=test');
-        await expect(backend.processQuery('!xkcd test')).resolves.toBe('https://duckduckgo.com/?q=test+site:xkcd.com');
-    });
-    cleanupStorage();
+    registerCleanup();
+    testCommon(runTester);
+    relativeBangs(runTester);
 });
 
 describe('Brave bangs', () => {
-    const backend = new Brave();
+    const backend = new Brave(bangConfig);
+    const runTester = createTester(backend);
     fetchBackend(backend);
-    testDomain(backend);
-    testQuery(backend);
-    testLuckySearch(backend);
-    cleanupStorage();
+    registerCleanup();
+    testCommon(runTester);
 });

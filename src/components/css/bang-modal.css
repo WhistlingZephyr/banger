@@ -1,0 +1,14 @@
+/* https://github.com/reactjs/react-modal/issues/782 */
+.ReactModalPortal {
+    z-index: 1;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+.ReactModal__Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+}

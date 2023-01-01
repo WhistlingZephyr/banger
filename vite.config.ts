@@ -3,17 +3,21 @@ import {resolve} from 'node:path';
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 
+const resolveDir = (...paths: string[]): string => resolve(__dirname, ...paths);
+
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: resolve(__dirname, 'src/'),
-    publicDir: resolve(__dirname, 'static'),
+    root: resolveDir('src'),
+    publicDir: resolveDir('static'),
     build: {
         sourcemap: true,
-        outDir: resolve(__dirname, 'dist/'),
+        emptyOutDir: false,
+        outDir: resolveDir('dist'),
         rollupOptions: {
             input: {
-                options: resolve(__dirname, 'src/pages/options.html'),
-                background: resolve(__dirname, 'src/pages/background.html'),
+                options: resolveDir('src/pages/options.html'),
+                popup: resolveDir('src/pages/popup.html'),
+                background: resolveDir('src/pages/background.html'),
             },
         },
     },
@@ -21,4 +25,10 @@ export default defineConfig({
         devSourcemap: true,
     },
     plugins: [react()],
+    resolve: {
+        alias: {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            '@': resolveDir('src'),
+        },
+    },
 });

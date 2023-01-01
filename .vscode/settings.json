@@ -2,9 +2,14 @@
     "[typescript]": {
         "editor.defaultFormatter": "samverschueren.linter-xo"
     },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "samverschueren.linter-xo"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "xo.format.enable": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
+    "vitest.commandLine": "pnpm run test",
+    "vitest.enable": true,
 }

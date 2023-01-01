@@ -1,0 +1,11 @@
+.gridjs-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.gridjs-pages {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 1rem;
+}

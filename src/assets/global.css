@@ -1,0 +1,21 @@
+@import url("theme.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+#app {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    font-family: Inter;
+    overflow: hidden;
+}

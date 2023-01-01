@@ -1,0 +1,8 @@
+.bangsContent {
+    gap: 0rem;
+    padding: 1rem 1.5rem;
+}
+
+.bangsContent > div:last-of-type {
+    height: 100%;
+}

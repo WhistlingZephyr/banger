@@ -260,19 +260,7 @@ export function BangsDataGrid(): JSX.Element {
                                                     await bangConfig.customBangs.pushBang(
                                                         currentBang,
                                                     );
-                                                if (
-                                                    result &&
-                                                    currentBangShortcut
-                                                ) {
-                                                    await bangConfig.customBangs.removeBang(
-                                                        currentBangShortcut,
-                                                    );
-                                                }
-
-                                                if (
-                                                    result ||
-                                                    !currentBangShortcut
-                                                ) {
+                                                if (result) {
                                                     setIsModalOpen(false);
                                                 }
 

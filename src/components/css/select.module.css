@@ -71,6 +71,8 @@
 .selectItem {
     padding: 0rem 1rem;
     height: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 .selectItem.highlighted {

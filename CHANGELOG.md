@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/WhistlingZephyr/banger/compare/v0.2.3...v0.2.4) (2023-01-01)
+
+
+### Bug Fixes
+
+* fix custom bang editing ([0b9c45c](https://github.com/WhistlingZephyr/banger/commit/0b9c45c0d2da58f30e102553d57496d7b3194e61))
+
 ### [0.2.3](https://github.com/WhistlingZephyr/banger/compare/v0.2.2...v0.2.3) (2023-01-01)
 
 

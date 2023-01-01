@@ -3,7 +3,7 @@
 
 A Firefox extension that adds DuckDuckGo-like !Bangs to any search engine.
 
-Install this extension at https://addons.mozilla.org/en-US/Firefox/addon/banger/
+Install this extension at https://addons.mozilla.org/en-US/firefox/addon/banger/
 
 ## FAQ
 

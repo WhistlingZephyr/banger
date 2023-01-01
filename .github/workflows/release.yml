@@ -36,7 +36,7 @@ jobs:
       - name: Build
         run: pnpm run build
       - name: Submit
-        run: cd $DIRECTORY && pnpm exec web-ext-submit@7
+        run: cd $DIRECTORY && pnpm run publish
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}

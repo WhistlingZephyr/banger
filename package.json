@@ -22,7 +22,8 @@
     "release": "standard-version --sign",
     "release:tags": "git push --follow-tags origin main",
     "release:github": "env-cmd conventional-github-releaser -p conventionalcommits",
-    "postrelease": "pnpm run release:tags && pnpm run release:github"
+    "postrelease": "pnpm run release:tags && pnpm run release:github",
+    "publish": "web-ext-submit"
   },
   "webExt": {
     "sourceDir": "dist/"
@@ -87,6 +88,7 @@
     "vite": "^4.0.3",
     "vitest": "^0.26.2",
     "web-ext": "^7.4.0",
+    "web-ext-submit": "^7.4.0",
     "web-ext-types": "^3.2.1",
     "webpack": "^5.75.0",
     "xo": "^0.53.1"

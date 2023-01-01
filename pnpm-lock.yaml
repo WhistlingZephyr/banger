@@ -43,6 +43,7 @@ specifiers:
   vite: ^4.0.3
   vitest: ^0.26.2
   web-ext: ^7.4.0
+  web-ext-submit: ^7.4.0
   web-ext-types: ^3.2.1
   webpack: ^5.75.0
   xo: ^0.53.1
@@ -90,6 +91,7 @@ devDependencies:
   vite: 4.0.3_@types+node@18.11.17
   vitest: 0.26.2_@vitest+ui@0.26.2
   web-ext: 7.4.0
+  web-ext-submit: 7.4.0
   web-ext-types: 3.2.1
   webpack: 5.75.0
   xo: 0.53.1_webpack@5.75.0
@@ -8409,6 +8411,21 @@ packages:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
       defaults: 1.0.4
+    dev: true
+
+  /web-ext-submit/7.4.0:
+    resolution: {integrity: sha512-SEyXsQfgBeBTCedjUSZW1NFEFkAhAeliUO+1/jiHAxM4RA4EF0r6dwVAkwx8Rn3anFKdmdHI2A7h0QoJRMR2HA==}
+    engines: {node: '>=12.0.0', npm: '>=6.9.0'}
+    hasBin: true
+    dependencies:
+      web-ext: 7.4.0
+    transitivePeerDependencies:
+      - body-parser
+      - bufferutil
+      - express
+      - safe-compare
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /web-ext-types/3.2.1:

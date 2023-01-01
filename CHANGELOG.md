@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/WhistlingZephyr/banger/compare/v0.2.1...v0.2.2) (2023-01-01)
+
+
+### Bug Fixes
+
+* **backend:** fix !webarchive ([0a1d1c9](https://github.com/WhistlingZephyr/banger/commit/0a1d1c9de106c71c6456ddc93af0ebd0b546f888))
+* fix release script ([97a281b](https://github.com/WhistlingZephyr/banger/commit/97a281b611badbc20e8900496d5bda3cd27736cf))
+* **ui:** fix custom bang addition ([b82a758](https://github.com/WhistlingZephyr/banger/commit/b82a758edf0c0f4fcd5cc6056835e4fb094cfadb))
+* **ui:** fix dropdown menu padding ([5f6a1c7](https://github.com/WhistlingZephyr/banger/commit/5f6a1c77a0795b7c7f4f82ee648bd0a636cb056a))
+* **ui:** highlight save button ([9aa1752](https://github.com/WhistlingZephyr/banger/commit/9aa17529dca9943ee0ebb938bbe451b109969e10))
+
 ### [0.2.1](https://github.com/WhistlingZephyr/banger/compare/v0.2.0...v0.2.1) (2023-01-01)
 
 

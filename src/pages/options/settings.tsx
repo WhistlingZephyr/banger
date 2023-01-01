@@ -75,7 +75,7 @@ export default function SettingsPage(): JSX.Element {
     };
 
     return (
-        <Page contentClass={styles.settingsContent}>
+        <Page>
             <div className={styles.settingsContainer}>
                 {enginesList &&
                     currentEngine &&

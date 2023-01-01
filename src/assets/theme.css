@@ -23,6 +23,9 @@
 
     --sky-500: #0ea5e9;
     --sky-600: #0284c7;
+    
+    --emerald-400: #34D399;
+    --emerald-600: #059669;
 
     --red-500: #ef4444;
     --red-600: #dc2626;
@@ -36,6 +39,7 @@
     --control-click-color: var(--gray-400);
     --error-color: var(--red-500);
     --hyperlink-color: var(--sky-600);
+    --success-color: var(--emerald-400);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,5 +53,6 @@
         --control-click-color: var(--gray-500);
         --error-color: var(--red-600);
         --hyperlink-color: var(--sky-500);
+        --success-color: var(--emerald-600);
     }
 }

@@ -1,7 +1,3 @@
-.settingsContent {
-    justify-content: space-between;
-}
-
 .settingsContainer {
     display: flex;
     flex-direction: column;
@@ -13,10 +9,11 @@
 .buttonContainer {
     width: 100%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
 }
 
 .saveButton {
     justify-self: center;
+    background-color: var(--success-color);
 }

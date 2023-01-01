@@ -262,12 +262,17 @@ export default abstract class Backend<T> {
                         };
                     }
 
+                    const encodedReplacement = encodeURIComponent(
+                        this.bangReplacement,
+                    );
                     return {
                         type: 'url',
-                        entry: bang.url.replace(
-                            this.bangReplacement,
-                            encodeURIComponent(entry),
-                        ),
+                        entry: bang.url.includes(encodedReplacement)
+                            ? bang.url.replace(encodedReplacement, entry)
+                            : bang.url.replace(
+                                  this.bangReplacement,
+                                  encodeURIComponent(entry),
+                              ),
                     };
                 });
             }

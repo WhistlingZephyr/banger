@@ -19,10 +19,10 @@
     "dev": "pnpm run start",
     "sign": "env-cmd -x web-ext sign --api-key=\\$FIREFOX_API_KEY --api-secret=\\$FIREFOX_API_SECRET",
     "prepare": "husky install",
-    "release": "standard-version --sign",
+    "release:version": "standard-version --sign",
     "release:tags": "git push --follow-tags origin main",
     "release:github": "env-cmd conventional-github-releaser -p conventionalcommits",
-    "postrelease": "pnpm run release:tags && pnpm run release:github",
+    "release": "pnpm run release:version && pnpm run release:tags && pnpm run release:github",
     "publish": "web-ext-submit"
   },
   "webExt": {

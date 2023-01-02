@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/WhistlingZephyr/banger/compare/v0.2.5...v0.2.6) (2023-01-02)
+
+
+### Features
+
+* add default search engine switch ([f7a88c5](https://github.com/WhistlingZephyr/banger/commit/f7a88c5691ca0cf6a004c8c7e3f5125008c76d77))
+
 ### [0.2.5](https://github.com/WhistlingZephyr/banger/compare/v0.2.4...v0.2.5) (2023-01-02)
 
 

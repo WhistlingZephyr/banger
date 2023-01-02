@@ -47,9 +47,10 @@ A super lucky bang is what Banger calls the bang where you combine a site bang w
 You can chain multiple bangs, site bangs, mixed site bangs, or super lucky bangs together with Banger's multi-bang delimiter, which is `;` by default. So you can type `!yt;r` to open up YouTube and Reddit in their respective tabs, and `!yr;r example` to search `example` on both of them.
 
 ### How can I chain multiple sites together in site bangs, mixed site bangs, and super lucky bangs?
-You can chain multiple of them together using Banger's multi-site bang delimiter, which is `,` by default. So you can type `!@yt,r example` to search `site:https://www.youtube.com/ | site:https://www.reddit.com/ example`. `|` here is the `OR` operator supported by most search engines[^3.1]; although as of 1st January 2023 Brave Search doesn't appear to support it yet.
+You can chain multiple of them together using Banger's multi-site bang delimiter, which is `,` by default. So you can type `!@yt,r example` to search `site:https://www.youtube.com/ OR site:https://www.reddit.com/ example`. The `OR` operator here is supported by most search engines[^3.1][^3.2]; although as of 1st January 2023 Brave Search doesn't appear to support it yet.
 
-[^3.1]: https://support.microsoft.com/en-gb/topic/advanced-search-options-b92e25f1-0085-4271-bdf9-14aaea720930
+[^3.1]: https://support.google.com/websearch/answer/2466433?hl=en
+[^3.2]: https://support.microsoft.com/en-gb/topic/advanced-search-options-b92e25f1-0085-4271-bdf9-14aaea720930
 
 ### Can I mix multi-bang and multi-site-bang chaining?
 Yes, you can! Typing `!@yt,r;r example` searches `site:https://www.youtube.com/ | site:https://www.reddit.com/ example` in one tab and `site:https://www.reddit.com/ example` in another.

@@ -38,13 +38,13 @@ export default function siteBangs(runTester: TestRunner): void {
         it('should resolve multiple site domains', async () => {
             await runTester('!@g,mdn', [
                 'search',
-                'site:https://www.google.com/ | site:https://developer.mozilla.org/',
+                'site:https://www.google.com/ OR site:https://developer.mozilla.org/',
             ]);
         });
         it('should resolve multiple site queries', async () => {
             await runTester('!@g,mdn test', [
                 'search',
-                'site:https://www.google.com/ | site:https://developer.mozilla.org/ test',
+                'site:https://www.google.com/ OR site:https://developer.mozilla.org/ test',
             ]);
         });
         it('should resolve mixed site domains', async () => {
@@ -52,7 +52,7 @@ export default function siteBangs(runTester: TestRunner): void {
                 '!@g,mdn;g;mdn',
                 [
                     'search',
-                    'site:https://www.google.com/ | site:https://developer.mozilla.org/',
+                    'site:https://www.google.com/ OR site:https://developer.mozilla.org/',
                 ],
                 ['search', 'site:https://www.google.com/'],
                 ['search', 'site:https://developer.mozilla.org/'],
@@ -63,7 +63,7 @@ export default function siteBangs(runTester: TestRunner): void {
                 '!@g,mdn;g;mdn test',
                 [
                     'search',
-                    'site:https://www.google.com/ | site:https://developer.mozilla.org/ test',
+                    'site:https://www.google.com/ OR site:https://developer.mozilla.org/ test',
                 ],
                 ['search', 'site:https://www.google.com/ test'],
                 ['search', 'site:https://developer.mozilla.org/ test'],
@@ -129,11 +129,11 @@ export default function siteBangs(runTester: TestRunner): void {
                 ['!@g,mdn,', '!@,g,mdn', '!@,g,mdn,'].flatMap(async query => [
                     runTester(query, [
                         'search',
-                        'site:https://www.google.com/ | site:https://developer.mozilla.org/',
+                        'site:https://www.google.com/ OR site:https://developer.mozilla.org/',
                     ]),
                     runTester(query + ' test', [
                         'search',
-                        'site:https://www.google.com/ | site:https://developer.mozilla.org/ test',
+                        'site:https://www.google.com/ OR site:https://developer.mozilla.org/ test',
                     ]),
                 ]),
             );

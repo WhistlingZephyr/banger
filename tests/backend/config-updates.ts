@@ -61,6 +61,150 @@ export default function configUpdates(runTester: TestRunner): void {
             await runTester('!g@r', ['search', '!g@r']);
             await runTester('!g@r test', ['search', '!g@r test']);
         });
+        it('should update or operator', async () => {
+            await expect(bangConfig.orOperator.updateValue('#')).resolves.toBe(
+                true,
+            );
+            await runTester('!@g,mdn', [
+                'search',
+                'site:https://www.google.com/ # site:https://developer.mozilla.org/',
+            ]);
+            await runTester('!@g,mdn test', [
+                'search',
+                'site:https://www.google.com/ # site:https://developer.mozilla.org/ test',
+            ]);
+            await runTester(
+                '!@g,mdn;g;mdn',
+                [
+                    'search',
+                    'site:https://www.google.com/ # site:https://developer.mozilla.org/',
+                ],
+                ['search', 'site:https://www.google.com/'],
+                ['search', 'site:https://developer.mozilla.org/'],
+            );
+            await runTester(
+                '!@g,mdn;g;mdn test',
+                [
+                    'search',
+                    'site:https://www.google.com/ # site:https://developer.mozilla.org/ test',
+                ],
+                ['search', 'site:https://www.google.com/ test'],
+                ['search', 'site:https://developer.mozilla.org/ test'],
+            );
+            await runTester('!g@r,mdn', [
+                'url',
+                'https://www.google.com/search?q=' +
+                    encodeURIComponent(
+                        'site:https://www.reddit.com/ # site:https://developer.mozilla.org/',
+                    ),
+            ]);
+            await runTester('!ddg@mdn,r', [
+                'url',
+                'https://duckduckgo.com/?q=' +
+                    encodeURIComponent(
+                        'site:https://developer.mozilla.org/ # site:https://www.reddit.com/',
+                    ),
+            ]);
+            await runTester('!g@r,mdn test', [
+                'url',
+                'https://www.google.com/search?q=' +
+                    encodeURIComponent(
+                        'site:https://www.reddit.com/ # site:https://developer.mozilla.org/ test',
+                    ),
+            ]);
+            await runTester('!ddg@mdn,r test', [
+                'url',
+                'https://duckduckgo.com/?q=' +
+                    encodeURIComponent(
+                        'site:https://developer.mozilla.org/ # site:https://www.reddit.com/ test',
+                    ),
+            ]);
+            await runTester(
+                '!@r;g@r,g',
+                ['search', 'site:https://www.reddit.com/'],
+                [
+                    'url',
+                    'https://www.google.com/search?q=' +
+                        encodeURIComponent(
+                            'site:https://www.reddit.com/ # site:https://www.google.com/',
+                        ),
+                ],
+            );
+            await runTester(
+                '!@r,g;g@r',
+                [
+                    'search',
+                    'site:https://www.reddit.com/ # site:https://www.google.com/',
+                ],
+                [
+                    'url',
+                    'https://www.google.com/search?q=' +
+                        encodeURIComponent('site:https://www.reddit.com/'),
+                ],
+            );
+            await runTester(
+                '!@r,g;g@r,g',
+                [
+                    'search',
+                    'site:https://www.reddit.com/ # site:https://www.google.com/',
+                ],
+                [
+                    'url',
+                    'https://www.google.com/search?q=' +
+                        encodeURIComponent(
+                            'site:https://www.reddit.com/ # site:https://www.google.com/',
+                        ),
+                ],
+            );
+            await runTester('!!r,mdn', [
+                'url',
+                'https://duckduckgo.com/?q=!+' +
+                    encodeURIComponent(
+                        'site:https://www.reddit.com/ # site:https://developer.mozilla.org/',
+                    ),
+            ]);
+            await runTester('!!r,mdn test', [
+                'url',
+                'https://duckduckgo.com/?q=!+' +
+                    encodeURIComponent(
+                        'site:https://www.reddit.com/ # site:https://developer.mozilla.org/ test',
+                    ),
+            ]);
+            await runTester(
+                '!!r,mdn;mdn',
+                [
+                    'url',
+                    'https://duckduckgo.com/?q=!+' +
+                        encodeURIComponent(
+                            'site:https://www.reddit.com/ # site:https://developer.mozilla.org/',
+                        ),
+                ],
+                [
+                    'url',
+                    'https://duckduckgo.com/?q=!+' +
+                        encodeURIComponent(
+                            'site:https://developer.mozilla.org/',
+                        ),
+                ],
+            );
+            await runTester(
+                '!!r,mdn;mdn test',
+                [
+                    'url',
+                    'https://duckduckgo.com/?q=!+' +
+                        encodeURIComponent(
+                            'site:https://www.reddit.com/ # site:https://developer.mozilla.org/ test',
+                        ),
+                ],
+                [
+                    'url',
+                    'https://duckduckgo.com/?q=!+' +
+                        encodeURIComponent(
+                            'site:https://developer.mozilla.org/ test',
+                        ),
+                ],
+            );
+        });
         it('should update multi-bang delimiter', async () => {
             await expect(
                 bangConfig.multiBangDelim.updateValue('#'),
@@ -148,24 +292,24 @@ export default function configUpdates(runTester: TestRunner): void {
             ).resolves.toBe(true);
             await runTester('!@g#mdn', [
                 'search',
-                'site:https://www.google.com/ | site:https://developer.mozilla.org/',
+                'site:https://www.google.com/ OR site:https://developer.mozilla.org/',
             ]);
             await runTester('!@g#mdn test', [
                 'search',
-                'site:https://www.google.com/ | site:https://developer.mozilla.org/ test',
+                'site:https://www.google.com/ OR site:https://developer.mozilla.org/ test',
             ]);
             await runTester('!!r#mdn', [
                 'url',
                 'https://duckduckgo.com/?q=!+' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/',
                     ),
             ]);
             await runTester('!!r#mdn test', [
                 'url',
                 'https://duckduckgo.com/?q=!+' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/ test',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/ test',
                     ),
             ]);
             await runTester('!@g,mdn', ['search', '!@g,mdn']);

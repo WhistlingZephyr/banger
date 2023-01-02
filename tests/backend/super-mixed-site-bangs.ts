@@ -20,7 +20,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
             );
@@ -28,7 +28,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 '!@r,g;g@r',
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
                 [
                     'url',
@@ -40,13 +40,13 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 '!@r,g;g@r,g',
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
                 [
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
             );
@@ -66,7 +66,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
             );
@@ -74,7 +74,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 '!@r,g;g@r test',
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
                 [
                     'url',
@@ -86,13 +86,13 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 '!@r,g;g@r,g test',
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
                 [
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
             );
@@ -116,7 +116,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
             );
             await runTester(
@@ -125,7 +125,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
                 ['search', 'site:https://www.reddit.com/'],
@@ -136,12 +136,12 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
             );
             await runTester(
@@ -162,7 +162,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
             );
             await runTester(
@@ -171,7 +171,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
                 ['search', 'site:https://www.reddit.com/ test'],
@@ -182,12 +182,12 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
             );
         });
@@ -211,7 +211,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
                 ['url', 'https://developer.mozilla.org/'],
             );
@@ -221,7 +221,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
                 ['search', 'site:https://www.reddit.com/'],
@@ -233,12 +233,12 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/',
                         ),
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/',
                 ],
                 ['url', 'https://developer.mozilla.org/'],
             );
@@ -261,7 +261,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
                 ['url', 'https://developer.mozilla.org/search?q=test'],
             );
@@ -271,7 +271,7 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
                 ['search', 'site:https://www.reddit.com/ test'],
@@ -283,12 +283,12 @@ export default function superMixedSiteBangs(runTester: TestRunner): void {
                     'url',
                     'https://www.google.com/search?q=' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                            'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                         ),
                 ],
                 [
                     'search',
-                    'site:https://www.reddit.com/ | site:https://www.google.com/ test',
+                    'site:https://www.reddit.com/ OR site:https://www.google.com/ test',
                 ],
                 ['url', 'https://developer.mozilla.org/search?q=test'],
             );

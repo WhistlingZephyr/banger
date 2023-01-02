@@ -69,7 +69,7 @@ export default function superLuckyBangs(runTester: TestRunner): void {
                 'url',
                 'https://duckduckgo.com/?q=!+' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/',
                     ),
             ]);
         });
@@ -78,7 +78,7 @@ export default function superLuckyBangs(runTester: TestRunner): void {
                 'url',
                 'https://duckduckgo.com/?q=!+' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/ test',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/ test',
                     ),
             ]);
         });
@@ -89,7 +89,7 @@ export default function superLuckyBangs(runTester: TestRunner): void {
                     'url',
                     'https://duckduckgo.com/?q=!+' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://developer.mozilla.org/',
+                            'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/',
                         ),
                 ],
                 [
@@ -108,7 +108,7 @@ export default function superLuckyBangs(runTester: TestRunner): void {
                     'url',
                     'https://duckduckgo.com/?q=!+' +
                         encodeURIComponent(
-                            'site:https://www.reddit.com/ | site:https://developer.mozilla.org/ test',
+                            'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/ test',
                         ),
                 ],
                 [

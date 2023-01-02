@@ -48,6 +48,10 @@ export default function SettingsPage(): JSX.Element {
         config.siteBangSep,
         setCallbacks,
     );
+    const [orOperator, setOrOperator] = useConfig(
+        config.orOperator,
+        setCallbacks,
+    );
     const [superLuckyBangPrefix, setSuperLuckyBangPrefixState] = useConfig(
         config.superLuckyBangPrefix,
         setCallbacks,
@@ -138,6 +142,18 @@ export default function SettingsPage(): JSX.Element {
                                     config.siteFormat.validate(value)
                                 }
                                 defaultValue={siteFormat}
+                            />
+                            <Input
+                                label="Multi-site OR operator"
+                                notes={[
+                                    'The text segment used for joining multiple site bangs',
+                                    '"|" or "OR" are the most common ones supported by search engines',
+                                ]}
+                                callback={setOrOperator}
+                                validate={async (value): Promise<boolean> =>
+                                    config.orOperator.validate(value)
+                                }
+                                defaultValue={orOperator}
                             />
                             <Input
                                 label="Bang prefix"

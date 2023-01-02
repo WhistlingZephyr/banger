@@ -33,6 +33,7 @@ export const bangConfig: BangConfig = {
     siteFormat: new ConfigValue('site-format', 'site:%d', (value: string) =>
         value.includes('%d'),
     ),
+    orOperator: new ConfigValue('or-operator', 'OR'),
     bangPrefix: new ConfigValue('bang-prefix', '!', validate),
     luckyBang: new ConfigValue('lucky-bang', '!', validate),
     siteBangSep: new ConfigValue('site-bang-sep', '@', validate),

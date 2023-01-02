@@ -35,14 +35,14 @@ export default function mixedSiteBangs(runTester: TestRunner): void {
                 'url',
                 'https://www.google.com/search?q=' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/',
                     ),
             ]);
             await runTester('!ddg@mdn,r', [
                 'url',
                 'https://duckduckgo.com/?q=' +
                     encodeURIComponent(
-                        'site:https://developer.mozilla.org/ | site:https://www.reddit.com/',
+                        'site:https://developer.mozilla.org/ OR site:https://www.reddit.com/',
                     ),
             ]);
         });
@@ -51,14 +51,14 @@ export default function mixedSiteBangs(runTester: TestRunner): void {
                 'url',
                 'https://www.google.com/search?q=' +
                     encodeURIComponent(
-                        'site:https://www.reddit.com/ | site:https://developer.mozilla.org/ test',
+                        'site:https://www.reddit.com/ OR site:https://developer.mozilla.org/ test',
                     ),
             ]);
             await runTester('!ddg@mdn,r test', [
                 'url',
                 'https://duckduckgo.com/?q=' +
                     encodeURIComponent(
-                        'site:https://developer.mozilla.org/ | site:https://www.reddit.com/ test',
+                        'site:https://developer.mozilla.org/ OR site:https://www.reddit.com/ test',
                     ),
             ]);
         });

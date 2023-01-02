@@ -13,6 +13,7 @@ export type CustomBang = {name: string} & Bang;
 export type BangConfig = Record<
     | 'luckyBangUrl'
     | 'siteFormat'
+    | 'orOperator'
     | 'bangPrefix'
     | 'luckyBang'
     | 'siteBangSep'
@@ -164,6 +165,7 @@ export default abstract class Backend<T> {
             await this.bangConfig.multiSiteBangDelim.getValue();
         const luckyBangUrl = await this.bangConfig.luckyBangUrl.getValue();
         const siteSep = await this.bangConfig.siteBangSep.getValue();
+        const orOperator = await this.bangConfig.orOperator.getValue();
         const siteFormat = await this.bangConfig.siteFormat.getValue();
         const customBangs = await this.bangConfig.customBangs.getValue();
         const getBang = (shortcut: string): CustomBang | Bang | undefined => {
@@ -202,7 +204,8 @@ export default abstract class Backend<T> {
             return (
                 domains
                     .map(domain => siteFormat.replace('%d', domain))
-                    .join(' | ') + (bangData.query ? ' ' + bangData.query : '')
+                    .join(` ${orOperator} `) +
+                (bangData.query ? ' ' + bangData.query : '')
             );
         };
 

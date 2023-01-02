@@ -10,7 +10,9 @@ export const engineName = new ConfigValue(
     'engine',
     async () => {
         const engines = await listEngines();
-        return engines[0].name;
+        return (
+            engines.find(engine => engine.isDefault)?.name ?? engines[0].name
+        );
     },
     async name => {
         const engines = await listEngines();

@@ -8,13 +8,14 @@ Install this extension at https://addons.mozilla.org/en-US/firefox/addon/banger/
 ## FAQ
 
 ### What are bangs?
-Bangs are a feature of certain search engines (DuckDuckGo[^1.1], Brave Search[^1.2], Searx[^1.3], SearXNG[^1.4], You.com[^1.5]) that allow you to type shortcuts to quickly open up another search engine or website's URL. For example, you can type `!yt example` in DuckDuckGo to open up https://www.youtube.com/results?search_query=example, which is the page on YouTube for searching `example`; likewise, you can simply type `!yt` to open up https://www.youtube.com.
+Bangs are a feature of certain search engines (DuckDuckGo[^1.1], Brave Search[^1.2], Searx[^1.3], SearXNG[^1.4], You.com[^1.5], Kagi[^1.6]) that allow you to type shortcuts to quickly open up another search engine or website's URL. For example, you can type `!yt example` in DuckDuckGo to open up https://www.youtube.com/results?search_query=example, which is the page on YouTube for searching `example`; likewise, you can simply type `!yt` to open up https://www.youtube.com.
 
 [^1.1]: https://duckduckgo.com/bangs
 [^1.2]: https://search.brave.com/bangs
 [^1.3]: https://searx.github.io/searx/user/search_syntax.html
 [^1.4]: https://docs.searxng.org/user/index.html
 [^1.5]: https://about.you.com/bangs/
+[^1.6]: https://blog.kagi.com/kagi-features
 
 ### What does banger do?
 Banger lets you execute !bangs client-side without having to send a request to a search engine's server each time you fetch a bang. It also allows you to use !bangs with any search engine rather than only those that support them. Also, it speeds your queries up because all the data is cached client-side and there are fewer redirects.

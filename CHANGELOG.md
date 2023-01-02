@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/WhistlingZephyr/banger/compare/v0.2.4...v0.2.5) (2023-01-02)
+
+
+### Features
+
+* add OR op config option & change default ([df16d7b](https://github.com/WhistlingZephyr/banger/commit/df16d7b4e5f34f5ce8d2101fc1a1d950859c980f))
+
 ### [0.2.4](https://github.com/WhistlingZephyr/banger/compare/v0.2.3...v0.2.4) (2023-01-01)
 
 

@@ -15,7 +15,7 @@
     "lint": "pnpm run lint:src && pnpm run lint:ext",
     "test": "vitest",
     "start:ext": "web-ext run --devtools --url about:addons",
-    "start": "concurrently -k \"pnpm run watch\" \"pnpm run watch\" \"pnpm run start:ext\"",
+    "start": "concurrently -k \"pnpm run watch\" \"pnpm run watch:ext\" \"pnpm run start:ext\"",
     "dev": "pnpm run start",
     "sign": "env-cmd -x web-ext sign --api-key=\\$FIREFOX_API_KEY --api-secret=\\$FIREFOX_API_SECRET",
     "prepare": "husky install",

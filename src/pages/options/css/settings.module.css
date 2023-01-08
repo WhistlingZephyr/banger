@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 1rem;
     min-width: 65rem;
-    overflow: scroll;
 }
 
 .buttonContainer {

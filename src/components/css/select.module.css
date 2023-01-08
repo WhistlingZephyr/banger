@@ -61,7 +61,6 @@
     margin: 0rem;
     background-color: var(--control-hover-color);
     max-height: 80rem;
-    overflow: scroll;
     cursor: pointer;
     user-select: none;
     border-bottom-left-radius: var(--border-radius);

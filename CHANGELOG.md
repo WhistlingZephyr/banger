@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/WhistlingZephyr/banger/compare/v0.2.6...v0.2.7) (2023-01-08)
+
+
+### Bug Fixes
+
+* **dev:** fix watch script ([efa9bd0](https://github.com/WhistlingZephyr/banger/commit/efa9bd02ffbb1fa303f384e16c01705ea557eefa))
+* **ui:** remove extra scrollbar bug ([de7b6d2](https://github.com/WhistlingZephyr/banger/commit/de7b6d2ade7d049af599063173ef8c582f926630))
+
 ### [0.2.6](https://github.com/WhistlingZephyr/banger/compare/v0.2.5...v0.2.6) (2023-01-02)
 
 

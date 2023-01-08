@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Banger",
     "description": "Add DuckDuckGo-like !Bangs to any search engine.",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "icons": {
         "48": "icons/icon.svg",
         "96": "icons/icon.svg"

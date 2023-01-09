@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
@@ -37,35 +37,6 @@ jobs:
         run: pnpm run build
       - name: Submit
         run: cd $DIRECTORY && pnpm run publish
-      - name: Generate UUID
-        id: generate-uuid
-        uses: filipstefansson/uuid-action@v1
-      - name: Get current timestamp
-        id: get-timestamp
-        run: echo "timestamp=$(date +%s)" >> $GITHUB_OUTPUT
-      - name: Generate JWT Payload
-        id: generate-jwt-payload
-        run: |
-          echo "payload=\"{\
-              \\\"iss\":\\\"$WEB_EXT_API_KEY\\\",\
-              \\\"jti\\\": \\\"${{ steps.get-timestamp.outputs.timestamp }}\\\",\
-              \\\"iat\\\": ${{ steps.generate-uuid.outputs.uuid }},\
-              \\\"exp\\\": $(expr ${{ steps.get-timestamp.outputs.timestamp }} + 60)\
-          }\"" >> $GITHUB_OUTPUT
-      - name: Generate JWT
-        id: generate-jwt-token
-        uses: morzzz007/github-actions-jwt-generator@1.0.1
-        with:
-          secret: ${{ secrets.WEB_EXT_API_SECRET }}
-          payload: ${{ steps.generate-jwt-payload.payload }}
-      # https://github.com/fregante/web-ext-submit/issues/2#issuecomment-1094305479
-      - name: Upload source
-        run: |
-          git archive -o source.zip HEAD
-          curl -XPOST https://addons.mozilla.org/api/v5/addons/addon/banger/versions/ \
-            -H "Authorization: ${{steps.generate-jwt-token.outputs.token}}" \
-            -F "source=@source.zip"
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
-          TIMESTAMP: ${{ steps.timestamp.outputs.timestamp }}

@@ -17,13 +17,16 @@
     "start:ext": "web-ext run --devtools --url about:addons",
     "start": "concurrently -k \"pnpm run watch\" \"pnpm run watch:ext\" \"pnpm run start:ext\"",
     "dev": "pnpm run start",
-    "sign": "env-cmd -x web-ext sign --api-key=\\$FIREFOX_API_KEY --api-secret=\\$FIREFOX_API_SECRET",
+    "sign": "env-cmd -x web-ext sign --api-key=\\$WEB_EXT_API_KEY --api-secret=\\$WEB_EXT_API_SECRET",
     "prepare": "husky install",
     "release:version": "standard-version --sign",
     "release:tags": "git push --follow-tags origin main",
     "release:github": "env-cmd conventional-github-releaser -p conventionalcommits",
     "release": "pnpm run release:version && pnpm run release:tags && pnpm run release:github",
-    "publish": "web-ext-submit"
+    "publish": "web-ext-submit",
+    "archive-source": "git archive -o source.zip HEAD",
+    "upload-source": "env-cmd node bin/upload-source.js",
+    "postpublish": "pnpm run archive-source && pnpm run upload-source"
   },
   "webExt": {
     "sourceDir": "dist/"
@@ -92,5 +95,8 @@
     "web-ext-types": "^3.2.1",
     "webpack": "^5.75.0",
     "xo": "^0.53.1"
+  },
+  "dependencies": {
+    "node-jsonwebtoken": "^0.0.1"
   }
 }

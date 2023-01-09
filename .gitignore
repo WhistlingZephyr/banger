@@ -2,3 +2,4 @@ node_modules/
 dist/
 web-ext-artifacts/
 .env
+source.zip

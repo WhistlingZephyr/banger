@@ -36,38 +36,10 @@ jobs:
       - name: Build
         run: pnpm run build
       - name: Submit
-        run: cd $DIRECTORY && pnpm run publish
+        run: |
+          cd $DIRECTORY
+          pnpm run publish
+          pnpm run postpublish
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
-      - name: Generate UUID
-        id: generate-uuid
-        uses: filipstefansson/uuid-action@v1
-      - name: Get current timestamp
-        id: get-timestamp
-        run: echo "timestamp=$(date +%s)" >> $GITHUB_OUTPUT
-      - name: Generate JWT Payload
-        id: generate-jwt-payload
-        run: |
-          echo "payload=\"{\
-              \\\"iss\\\": \\\"${{ secrets.WEB_EXT_API_KEY }}\\\",\
-              \\\"jti\\\": \\\"${{ steps.generate-uuid.outputs.uuid }}\\\",\
-              \\\"iat\\\": ${{ steps.get-timestamp.outputs.timestamp }},\
-              \\\"exp\\\": $(expr ${{ steps.get-timestamp.outputs.timestamp }} + 60)\
-          }\"" >> $GITHUB_OUTPUT
-      - name: Generate JWT
-        id: generate-jwt-token
-        uses: morzzz007/github-actions-jwt-generator@1.0.1
-        with:
-          secret: ${{ secrets.WEB_EXT_API_SECRET }}
-          payload: ${{ steps.generate-jwt-payload.outputs.payload }}
-      - name: Dump token
-        run: echo ${{steps.generate-jwt-token.outputs.token}} | cut -d"." -f1,2 <<< $1 | sed 's/\./\n/g' | base64 --decode
-      # https://github.com/fregante/web-ext-submit/issues/2#issuecomment-1094305479
-      - name: Archive source
-        run: git archive -o source.zip HEAD
-      - name: Upload source
-        run: |
-          curl -XPOST https://addons.mozilla.org/api/v5/addons/addon/banger/versions/ \
-            -H "Authorization: JWT ${{steps.generate-jwt-token.outputs.token}}" \
-            -F "source=@source.zip"

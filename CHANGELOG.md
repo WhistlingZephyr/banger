@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/WhistlingZephyr/banger/compare/v0.2.12...v0.2.13) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** add missing quotes ([c8e69d0](https://github.com/WhistlingZephyr/banger/commit/c8e69d0c8f9ecb5624e27ee2aa7acb1d38662662))
+* **ci:** remove quotes in wrong place ([15fb909](https://github.com/WhistlingZephyr/banger/commit/15fb9094204640411e75c5fae5726ec976138640))
+
 ### [0.2.12](https://github.com/WhistlingZephyr/banger/compare/v0.2.11...v0.2.12) (2023-01-09)
 
 

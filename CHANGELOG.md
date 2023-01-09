@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.19](https://github.com/WhistlingZephyr/banger/compare/v0.2.18...v0.2.19) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** deduplicate publish workflow ([10e82cd](https://github.com/WhistlingZephyr/banger/commit/10e82cdfecbc7fea296dc5a51885693112293067))
+* **ci:** fix typo in publish script ([77aa9e2](https://github.com/WhistlingZephyr/banger/commit/77aa9e2717e74e43398e180aceb762cee2def54a))
+
 ### [0.2.18](https://github.com/WhistlingZephyr/banger/compare/v0.2.17...v0.2.18) (2023-01-09)
 
 

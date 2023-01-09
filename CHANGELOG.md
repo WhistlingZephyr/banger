@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/WhistlingZephyr/banger/compare/v0.2.7...v0.2.8) (2023-01-09)
+
+
+### Features
+
+* **ci:** add source upload ([2394f9a](https://github.com/WhistlingZephyr/banger/commit/2394f9ac8d0868140a125a6975d0ac95f98c81ca))
+* **ci:** add source upload ([3ec7c5d](https://github.com/WhistlingZephyr/banger/commit/3ec7c5dcf4e74e18e880ce32d0b1dd446723c5a4))
+
+
+### Bug Fixes
+
+* **docs:** add build instruction ([90d6dd0](https://github.com/WhistlingZephyr/banger/commit/90d6dd04cc0510c1e51f2a3cc918460bdf2c373f))
+* **docs:** fix readme grammar ([90b6b5c](https://github.com/WhistlingZephyr/banger/commit/90b6b5c595af5d00160820560e5282b935aad578))
+
 ### [0.2.7](https://github.com/WhistlingZephyr/banger/compare/v0.2.6...v0.2.7) (2023-01-08)
 
 

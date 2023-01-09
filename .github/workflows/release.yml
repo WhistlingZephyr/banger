@@ -50,7 +50,7 @@ jobs:
         id: generate-jwt-payload
         run: |
           echo "payload=\"{\
-              \\\"iss\\\":\\\"${{ secrets.WEB_EXT_API_KEY }}\\\",\
+              \\\"iss\\\": \\\"${{ secrets.WEB_EXT_API_KEY }}\\\",\
               \\\"jti\\\": \\\"${{ steps.generate-uuid.outputs.uuid }}\\\",\
               \\\"iat\\\": ${{ steps.get-timestamp.outputs.timestamp }},\
               \\\"exp\\\": $(expr ${{ steps.get-timestamp.outputs.timestamp }} + 60)\

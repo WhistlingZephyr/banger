@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.21](https://github.com/WhistlingZephyr/banger/compare/v0.2.20...v0.2.21) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** switch from POST to PATCH for src upload ([5e6f9a9](https://github.com/WhistlingZephyr/banger/commit/5e6f9a97c0308123272a151ee822b8884b5c1356))
+
 ### [0.2.20](https://github.com/WhistlingZephyr/banger/compare/v0.2.19...v0.2.20) (2023-01-09)
 
 

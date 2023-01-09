@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.18](https://github.com/WhistlingZephyr/banger/compare/v0.2.17...v0.2.18) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** remove env-cmd from CI script ([7303a47](https://github.com/WhistlingZephyr/banger/commit/7303a47a91c29c19688e1b5b70619169747c9c58))
+
 ### [0.2.17](https://github.com/WhistlingZephyr/banger/compare/v0.2.16...v0.2.17) (2023-01-09)
 
 

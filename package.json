@@ -26,6 +26,7 @@
     "publish:submit": "web-ext-submit",
     "archive-source": "git archive -o source.zip HEAD",
     "upload-source": "node bin/upload-source.js",
+    "upload-source-dev": "env-cmd node bin/upload-source.js",
     "publish:source": "pnpm run archive-source && pnpm run upload-source",
     "publish": "pnpm run publish:submit && pnpm run publish:source",
     "publish-dev": "env-cmd pnpm run publish"

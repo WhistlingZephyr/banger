@@ -53,14 +53,13 @@ data.append("source", new Blob([source]), "source.zip");
     if (!id) {
         throw new Error(`Version ${version} not found`);
     }
-    fetch(
+    const body = await fetch(
         `https://addons.mozilla.org/api/v5/addons/addon/banger/versions/${id}`,
         {
             method: "PATCH",
             headers,
             body: data,
         }
-    )
-        .then(async body => console.log(await body.text()))
-        .catch(console.error);
+    );
+    console.log(await body.text());
 })();

@@ -62,7 +62,7 @@ jobs:
           secret: ${{ secrets.WEB_EXT_API_SECRET }}
           payload: ${{ steps.generate-jwt-payload.outputs.payload }}
       - name: Dump token
-        run: echo ${{steps.generate-jwt-token.outputs.token}}
+        run: echo ${{steps.generate-jwt-token.outputs.token}} | cut -d"." -f1,2 <<< $1 | sed 's/\./\n/g' | base64 --decode
       # https://github.com/fregante/web-ext-submit/issues/2#issuecomment-1094305479
       - name: Archive source
         run: git archive -o source.zip HEAD

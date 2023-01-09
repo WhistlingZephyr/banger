@@ -103,6 +103,9 @@ You must install the required npm packages and set up husky hooks to develop thi
 1. `pnpm install`
 2. `pnpm run prepare`
 
+### Build
+1. `pnpm run build`
+
 ### Testing
 
 - `pnpm run test` to run all tests

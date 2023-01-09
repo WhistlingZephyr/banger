@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.16](https://github.com/WhistlingZephyr/banger/compare/v0.2.15...v0.2.16) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** add debug echo ([940949a](https://github.com/WhistlingZephyr/banger/commit/940949a343481914c7ea8607ca3be522f9b76b4f))
+
 ### [0.2.15](https://github.com/WhistlingZephyr/banger/compare/v0.2.14...v0.2.15) (2023-01-09)
 
 ### [0.2.14](https://github.com/WhistlingZephyr/banger/compare/v0.2.13...v0.2.14) (2023-01-09)

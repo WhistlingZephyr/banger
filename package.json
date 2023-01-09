@@ -23,10 +23,12 @@
     "release:tags": "git push --follow-tags origin main",
     "release:github": "env-cmd conventional-github-releaser -p conventionalcommits",
     "release": "pnpm run release:version && pnpm run release:tags && pnpm run release:github",
-    "publish": "web-ext-submit",
+    "publish:submit": "web-ext-submit",
     "archive-source": "git archive -o source.zip HEAD",
-    "upload-source": "env-cmd node bin/upload-source.js",
-    "postpublish": "pnpm run archive-source && pnpm run upload-source"
+    "upload-source": "node bin/upload-source.js",
+    "publish:source": "pnpm run archive-source && pnpm run upload-source",
+    "publish": "pnpm run publish:submit && pnpm run publish-source",
+    "publish-dev": "env-cmd pnpm run publish"
   },
   "webExt": {
     "sourceDir": "dist/"

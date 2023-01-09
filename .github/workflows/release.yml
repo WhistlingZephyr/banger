@@ -37,6 +37,9 @@ jobs:
         run: pnpm run build
       - name: Submit
         run: cd $DIRECTORY && pnpm run publish
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
+          WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
       - name: Generate UUID
         id: generate-uuid
         uses: filipstefansson/uuid-action@v1

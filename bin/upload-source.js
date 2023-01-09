@@ -56,7 +56,7 @@ data.append("source", new Blob([source]), "source.zip");
     fetch(
         `https://addons.mozilla.org/api/v5/addons/addon/banger/versions/${id}`,
         {
-            method: "POST",
+            method: "PATCH",
             headers,
             body: data,
         }

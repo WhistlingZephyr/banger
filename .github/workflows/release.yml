@@ -67,5 +67,5 @@ jobs:
       - name: Upload source
         run: |
           curl -XPOST https://addons.mozilla.org/api/v5/addons/addon/banger/versions/ \
-            -H "Authorization: ${{steps.generate-jwt-token.outputs.token}}" \
+            -H "Authorization: JWT ${{steps.generate-jwt-token.outputs.token}}" \
             -F "source=@source.zip"

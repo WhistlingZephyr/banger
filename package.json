@@ -99,6 +99,6 @@
     "xo": "^0.53.1"
   },
   "dependencies": {
-    "node-jsonwebtoken": "^0.0.1"
+    "jsonwebtoken": "^9.0.0"
   }
 }

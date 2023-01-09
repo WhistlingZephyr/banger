@@ -60,13 +60,14 @@ jobs:
         uses: morzzz007/github-actions-jwt-generator@1.0.1
         with:
           secret: ${{ secrets.WEB_EXT_API_SECRET }}
-          payload: ${{ steps.generate-jwt-payload.payload }}
+          payload: ${{ steps.generate-jwt-payload.outputs.payload }}
       # https://github.com/fregante/web-ext-submit/issues/2#issuecomment-1094305479
+      - name: Archive source
+        run: git archive -o source.zip HEAD
       - name: Upload source
         run: |
-          git archive -o source.zip HEAD
           curl -XPOST https://addons.mozilla.org/api/v5/addons/addon/banger/versions/ \
-            -H "Authorization: JWT ${{steps.generate-jwt-token.outputs.token}}" \
+            -H "Authorization: ${{steps.generate-jwt-token.outputs.token}}" \
             -F "source=@source.zip"
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}

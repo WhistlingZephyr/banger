@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/WhistlingZephyr/banger/compare/v0.2.8...v0.2.9) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** fix release JWT ([d4472e3](https://github.com/WhistlingZephyr/banger/commit/d4472e3e738f4f9ef612132d72ccb0f0f2bafb5e))
+* **ci:** fix submit env ([1478e2a](https://github.com/WhistlingZephyr/banger/commit/1478e2a814026f096023ddc62cfc921d85dc609c))
+
 ### [0.2.8](https://github.com/WhistlingZephyr/banger/compare/v0.2.7...v0.2.8) (2023-01-09)
 
 

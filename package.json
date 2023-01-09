@@ -1,6 +1,6 @@
 {
   "name": "banger",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Add DuckDuckGo-like !Bangs to any search engine.",
   "scripts": {
     "watch": "vite build --watch",

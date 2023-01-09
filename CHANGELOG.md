@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/WhistlingZephyr/banger/compare/v0.2.9...v0.2.10) (2023-01-09)
+
+
+### Bug Fixes
+
+* **ci:** fix JWT payload ([b35be8e](https://github.com/WhistlingZephyr/banger/commit/b35be8e9c075e1f25e554961d548adc9552fac10))
+* **ci:** fix JWT payload gen ([589f7a2](https://github.com/WhistlingZephyr/banger/commit/589f7a240eae5727131ea15a49823ebba0a27f97))
+
 ### [0.2.9](https://github.com/WhistlingZephyr/banger/compare/v0.2.8...v0.2.9) (2023-01-09)
 
 

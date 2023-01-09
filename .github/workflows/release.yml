@@ -52,7 +52,7 @@ jobs:
           echo "payload=\"{\
               \\\"iss\\\":\\\"${{ secrets.WEB_EXT_API_KEY }}\\\",\
               \\\"jti\\\": \\\"${{ steps.generate-uuid.outputs.uuid }}\\\",\
-              \\\"iat\\\": \\\"${{ steps.get-timestamp.outputs.timestamp }}\\\",\
+              \\\"iat\\\": ${{ steps.get-timestamp.outputs.timestamp }},\
               \\\"exp\\\": $(expr ${{ steps.get-timestamp.outputs.timestamp }} + 60)\
           }\"" >> $GITHUB_OUTPUT
       - name: Generate JWT

@@ -22,7 +22,7 @@ Banger lets you execute !bangs client-side without having to send a request to a
 
 Banger also goes a step further and adds exclusive new features such as allowing you to define your own !bangs and having site bangs and super lucky bangs.
 
-### Why does banger's search suggestions use Google?
+### Why do banger's search suggestions use Google?
 Due to a technical limitation with the Web Extensions API, Banger can't direct search suggestions to its engine of choice instead of choosing a permanent search suggestion provider. Which forces it to settle down with one search suggestion provider, and Google is the most popular choice.
 
 ### What's a lucky bang?

@@ -39,7 +39,7 @@ jobs:
         run: git archive -o source.zip HEAD
       - name: Submit
         run: |
-          npx amo-upload \
+          pnpm exec amo-upload \
           --api-key ${{ secrets.WEB_EXT_API_KEY }} \
           --api-secret ${{ secrets.WEB_EXT_API_SECRET }} \
           --addon-id ${{ secrets.ADDON_ID }} \

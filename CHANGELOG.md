@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.24](https://github.com/WhistlingZephyr/banger/compare/v0.2.23...v0.2.24) (2023-01-11)
+
+
+### Bug Fixes
+
+* **ci:** use fork of amo-upload ([0aa14a5](https://github.com/WhistlingZephyr/banger/commit/0aa14a5503e535219ff6c1f3dff70e3c3d7508d4))
+
 ### [0.2.23](https://github.com/WhistlingZephyr/banger/compare/v0.2.22...v0.2.23) (2023-01-11)
 
 

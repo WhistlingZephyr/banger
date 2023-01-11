@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.23](https://github.com/WhistlingZephyr/banger/compare/v0.2.22...v0.2.23) (2023-01-11)
+
+
+### Bug Fixes
+
+* **backend:** update brave bangs url ([3d574ec](https://github.com/WhistlingZephyr/banger/commit/3d574ece74dcf4e4df042a688e4cb05fcd8eb299))
+
 ### [0.2.22](https://github.com/WhistlingZephyr/banger/compare/v0.2.21...v0.2.22) (2023-01-11)
 
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.22](https://github.com/WhistlingZephyr/banger/compare/v0.2.21...v0.2.22) (2023-01-11)
+
+
+### Features
+
+* **ci:** rewrite source upload ([f8edc34](https://github.com/WhistlingZephyr/banger/commit/f8edc34ebe1a9f8b2a3e2dc221b8d72945ee5748))
+
 ### [0.2.21](https://github.com/WhistlingZephyr/banger/compare/v0.2.20...v0.2.21) (2023-01-09)
 
 

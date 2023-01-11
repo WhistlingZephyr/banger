@@ -14,7 +14,7 @@ specifiers:
   '@types/react-modal': ^3.13.1
   '@vitejs/plugin-react': ^3.0.0
   '@vitest/ui': ^0.26.2
-  amo-upload: ^0.2.1
+  amo-upload: github:WhistlingZephyr/amo-upload
   chokidar-cli: ^3.0.0
   concurrently: ^7.6.0
   conventional-github-releaser: ^3.1.5
@@ -49,7 +49,7 @@ specifiers:
   xo: ^0.53.1
 
 dependencies:
-  amo-upload: 0.2.1
+  amo-upload: github.com/WhistlingZephyr/amo-upload/4479ef9570d40bf71e9d99d715c5b830608776da
 
 devDependencies:
   '@babel/core': 7.20.7
@@ -1483,17 +1483,6 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
-
-  /amo-upload/0.2.1:
-    resolution: {integrity: sha512-hRitDE+aT0rqWi8W8RuRm8eCps5N3jP9EnZmC2+XERuPN7wKW9vo/YPkDtJXr+OBGo/KR5kfAoNoe/igkTNISQ==}
-    engines: {node: '>= 14'}
-    hasBin: true
-    dependencies:
-      '@babel/runtime': 7.20.1
-      commander: 9.4.1
-      jsonwebtoken: 8.5.1
-      node-fetch: 3.3.0
-    dev: false
 
   /ansi-align/3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -8818,3 +8807,18 @@ packages:
       async: 3.2.4
       jszip: 3.10.1
     dev: true
+
+  github.com/WhistlingZephyr/amo-upload/4479ef9570d40bf71e9d99d715c5b830608776da:
+    resolution: {tarball: https://codeload.github.com/WhistlingZephyr/amo-upload/tar.gz/4479ef9570d40bf71e9d99d715c5b830608776da}
+    name: amo-upload
+    version: 0.2.1
+    engines: {node: '>= 14'}
+    hasBin: true
+    prepare: true
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime': 7.20.1
+      commander: 9.4.1
+      jsonwebtoken: 8.5.1
+      node-fetch: 3.3.0
+    dev: false

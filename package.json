@@ -92,6 +92,6 @@
     "xo": "^0.53.1"
   },
   "dependencies": {
-    "amo-upload": "^0.2.1"
+    "amo-upload": "github:WhistlingZephyr/amo-upload"
   }
 }

@@ -22,14 +22,7 @@
     "release:version": "standard-version --sign",
     "release:tags": "git push --follow-tags origin main",
     "release:github": "env-cmd conventional-github-releaser -p conventionalcommits",
-    "release": "pnpm run release:version && pnpm run release:tags && pnpm run release:github",
-    "publish:submit": "web-ext-submit",
-    "archive-source": "git archive -o source.zip HEAD",
-    "upload-source": "node bin/upload-source.js",
-    "upload-source-dev": "env-cmd node bin/upload-source.js",
-    "publish:source": "pnpm run archive-source && pnpm run upload-source",
-    "publish": "pnpm run publish:submit && pnpm run publish:source",
-    "publish-dev": "env-cmd pnpm run publish"
+    "release": "pnpm run release:version && pnpm run release:tags && pnpm run release:github"
   },
   "webExt": {
     "sourceDir": "dist/"
@@ -94,12 +87,11 @@
     "vite": "^4.0.3",
     "vitest": "^0.26.2",
     "web-ext": "^7.4.0",
-    "web-ext-submit": "^7.4.0",
     "web-ext-types": "^3.2.1",
     "webpack": "^5.75.0",
     "xo": "^0.53.1"
   },
   "dependencies": {
-    "jsonwebtoken": "^9.0.0"
+    "amo-upload": "^0.2.1"
   }
 }

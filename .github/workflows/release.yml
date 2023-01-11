@@ -35,8 +35,15 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm run build
+      - name: Archive source
+        run: git archive -o source.zip HEAD
       - name: Submit
-        run: cd $DIRECTORY && pnpm run publish
-        env:
-          WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
-          WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
+        run: |
+          npx amo-upload \
+          --api-key ${{ secrets.WEB_EXT_API_KEY }} \
+          --api-secret ${{ secrets.WEB_EXT_API_SECRET }} \
+          --addon-id ${{ secrets.ADDON_ID }} \
+          --addon-version $(cat .version) \
+          --channel listed \
+          --dist-file "web-ext-artifacts/banger-$(cat .version).zip" \
+          --source-file source.zip

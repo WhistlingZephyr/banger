@@ -18,7 +18,7 @@ type BraveBang = {
 };
 
 export default class Brave extends Backend<BraveBang> {
-    url = 'https://search.brave.com/bang/data';
+    url = 'https://search.brave.com/api/bang';
     bangReplacement = '{query}';
     formatBang = (bang: BraveBang): Bang => ({
         shortcut: bang.bang,

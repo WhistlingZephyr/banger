@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.25](https://github.com/WhistlingZephyr/banger/compare/v0.2.24...v0.2.25) (2023-01-11)
+
+
+### Bug Fixes
+
+* **ci:** switch to pnpm instead of npx ([a2c06e6](https://github.com/WhistlingZephyr/banger/commit/a2c06e6abd9e498469c5d341dfbbfe6bbf7d8e77))
+
 ### [0.2.24](https://github.com/WhistlingZephyr/banger/compare/v0.2.23...v0.2.24) (2023-01-11)
 
 

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.28](https://github.com/WhistlingZephyr/banger/compare/v0.2.27...v0.2.28) (2023-01-18)
+
+
+### Features
+
+* **docs:** add new roadmap entries ([9801aa9](https://github.com/WhistlingZephyr/banger/commit/9801aa90b4077d55c2886f57bb12a2ba9d287b8a))
+
+
+### Bug Fixes
+
+* allow updating bang shortcut ([da09351](https://github.com/WhistlingZephyr/banger/commit/da09351f5806b8dcff6903560a707e593d545f9a))
+* **dev:** add prettier to addon recommendations ([b5eb666](https://github.com/WhistlingZephyr/banger/commit/b5eb6665be69cd228986876b48e6f6e2392effcc))
+* **docs:** clearify multi-site bangs' roadmap ([7e6fd86](https://github.com/WhistlingZephyr/banger/commit/7e6fd86349add085285e753b033855f7c7276eea))
+
 ### [0.2.27](https://github.com/WhistlingZephyr/banger/compare/v0.2.26...v0.2.27) (2023-01-14)
 
 ### [0.2.25](https://github.com/WhistlingZephyr/banger/compare/v0.2.24...v0.2.25) (2023-01-11)

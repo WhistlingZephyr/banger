@@ -263,6 +263,11 @@ export function BangsDataGrid(): JSX.Element {
                                                     );
                                                 if (result) {
                                                     setIsModalOpen(false);
+                                                    if (currentBangShortcut) {
+                                                        await bangConfig.customBangs.removeBang(
+                                                            currentBangShortcut,
+                                                        );
+                                                    }
                                                 }
 
                                                 await fetchBangs();

@@ -6,6 +6,7 @@
         "christian-kohler.npm-intellisense",
         "samverschueren.linter-xo",
         "zixuanchen.vitest-explorer",
-        "christian-kohler.path-intellisense"
+        "christian-kohler.path-intellisense",
+        "esbenp.prettier-vscode"
     ]
 }

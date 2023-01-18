@@ -84,7 +84,7 @@ It's planned! Since Microsoft Edge's marketplace doesn't require any registratio
 - [x] Site bangs. (`!@yt example` to search for `example` from YouTube on your preferred search engine.)
 - [x] Mixed site bangs. (`!g@yt example` to search for `example` from YouTube on Google.)
 - [x] Multi-bangs. (`!yt;r` to open up YouTube and Reddit in their respective tabs.)
-- [x] Multi-site bangs. (`!@yt,r example` to search for `example` from YouTube or Reddit.)
+- [x] Multi-site bangs. (`!@yt,r example` to search for `example` from both YouTube and Reddit.)
 - [x] Custom bangs. (You can define your own bangs in settings.)
 - [x] Flexible syntax. (`!yt example`, `yt! example`, `example yt!`, `example !yt`)
 - [x] Customization options.

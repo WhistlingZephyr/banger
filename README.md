@@ -93,6 +93,10 @@ It's planned! Since Microsoft Edge's marketplace doesn't require any registratio
 - [ ] Negative mixed site bangs.
 - [ ] Mobile support.
 - [ ] Custom bang sources.
+- [ ] Set default search engine to a bang.
+- [ ] Bang aliases.
+- [ ] Manifest V3.
+- [ ] Multi-parameter bangs.
 
 ## Development
 

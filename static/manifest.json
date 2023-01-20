@@ -26,7 +26,6 @@
         "https://search.brave.com/bang/data",
         "https://duckduckgo.com/bang.js"
     ],
-    "content_security_policy": "default-src 'self' data: https://banger https://search.brave.com https://duckduckgo.com; script-src 'self' 'unsafe-eval'",
     "options_ui": {
         "page": "pages/options.html",
         "browser_style": false,

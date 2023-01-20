@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.30](https://github.com/WhistlingZephyr/banger/compare/v0.2.29...v0.2.30) (2023-01-20)
+
+
+### Bug Fixes
+
+* stop using custom CSP ([e113d96](https://github.com/WhistlingZephyr/banger/commit/e113d96dc96f3e4fc8eef895f4da810dc0bda244))
+
 ### [0.2.29](https://github.com/WhistlingZephyr/banger/compare/v0.2.28...v0.2.29) (2023-01-18)
 
 ### [0.2.28](https://github.com/WhistlingZephyr/banger/compare/v0.2.27...v0.2.28) (2023-01-18)

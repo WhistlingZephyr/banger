@@ -12,13 +12,13 @@ export default function Select<T>({
     getItemLabel,
     defaultItem,
 }: {
-    label: string;
-    callback?: (item: T) => void;
-    items: T[];
+    readonly label: string;
+    readonly callback?: (item: T) => void;
+    readonly items: T[];
     // eslint-disable-next-line @typescript-eslint/ban-types
-    getItemValue: (item: T | null) => string;
-    getItemLabel: (item: T) => string;
-    defaultItem?: T;
+    readonly getItemValue: (item: T | null) => string;
+    readonly getItemLabel: (item: T) => string;
+    readonly defaultItem?: T;
 }): JSX.Element {
     const {
         getItemProps,
@@ -64,7 +64,7 @@ export default function Select<T>({
                         <span className={styles.selectControlText}>
                             {selectedItem
                                 ? getItemLabel(selectedItem)
-                                : typeof defaultItem === 'undefined'
+                                : defaultItem === undefined
                                 ? 'Select'
                                 : getItemLabel(defaultItem)}
                         </span>

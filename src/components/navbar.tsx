@@ -9,9 +9,9 @@ export default function NavBar({
     pages,
     callback,
 }: {
-    defaultPage: string;
-    pages: PageInfo;
-    callback: (page: string) => void;
+    readonly defaultPage: string;
+    readonly pages: PageInfo;
+    readonly callback: (page: string) => void;
 }): JSX.Element {
     const [page, setPage] = useState(defaultPage);
     function PageButton({
@@ -19,9 +19,9 @@ export default function NavBar({
         label,
         id,
     }: {
-        icon: IconType;
-        label: string;
-        id: string;
+        readonly icon: IconType;
+        readonly label: string;
+        readonly id: string;
     }): JSX.Element {
         return (
             <button

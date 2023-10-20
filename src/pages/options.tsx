@@ -1,6 +1,6 @@
 import '@fontsource/inter';
-import {useState} from 'react';
-import ReactDOM from 'react-dom';
+import {StrictMode, useState} from 'react';
+import {createRoot} from 'react-dom/client';
 import {
     MdSettings,
     MdArchitecture,
@@ -41,4 +41,8 @@ function App(): JSX.Element {
     );
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+createRoot(document.querySelector('#app')!).render(
+    <StrictMode>
+        <App />
+    </StrictMode>,
+);

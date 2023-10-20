@@ -11,12 +11,17 @@ import {useFilePicker} from 'use-file-picker';
 import {saveAs} from 'file-saver';
 import styles from './css/config.module.css';
 import Button from './button';
-import {getConfig, resetConfig, updateConfig} from '@/helpers/import-export';
+import {
+    type ConfigData,
+    getConfig,
+    resetConfig,
+    updateConfig,
+} from '@/helpers/import-export';
 
 export default function Config(): JSX.Element {
     const [text, setText] = useState<string>('');
     const [errors, setErrors] = useState<string[]>([]);
-    const [openFileSelector, {filesContent, clear}] = useFilePicker({
+    const {openFilePicker, filesContent, clear} = useFilePicker({
         accept: 'txt',
         multiple: false,
     });
@@ -27,7 +32,7 @@ export default function Config(): JSX.Element {
 
     const saveConfig = useCallback(async (): Promise<void> => {
         try {
-            const data = JSON.parse(text);
+            const data = JSON.parse(text) as Partial<ConfigData>;
             setErrors(await updateConfig(data));
         } catch {
             setErrors(['Failed to parse JSON']);
@@ -79,7 +84,7 @@ export default function Config(): JSX.Element {
                             <Button
                                 icon={MdUploadFile}
                                 buttonClass={styles.button}
-                                onClick={openFileSelector}
+                                onClick={openFilePicker}
                             >
                                 Import from file
                             </Button>

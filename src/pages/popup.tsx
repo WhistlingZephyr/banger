@@ -1,7 +1,7 @@
 import '@fontsource/inter';
-import ReactDOM from 'react-dom';
 import {MdRefresh, MdSettings} from 'react-icons/md';
-import {useEffect, useState} from 'react';
+import {StrictMode, useEffect, useState} from 'react';
+import {createRoot} from 'react-dom/client';
 import styles from './popup/css/popup.module.css';
 import Button from '@/components/button';
 import {getBackendInstance} from '@/helpers/bang';
@@ -54,4 +54,8 @@ function App(): JSX.Element {
     );
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+createRoot(document.querySelector('#app')!).render(
+    <StrictMode>
+        <App />
+    </StrictMode>,
+);

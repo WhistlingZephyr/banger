@@ -9,12 +9,12 @@ export default function Input({
     callback,
     validate,
 }: {
-    label: string;
-    defaultValue?: string;
-    placeholder?: string;
-    notes?: string[];
-    callback?: (text: string) => void;
-    validate?: MaybeAsyncFn<string, boolean>;
+    readonly label: string;
+    readonly defaultValue?: string;
+    readonly placeholder?: string;
+    readonly notes?: string[];
+    readonly callback?: (text: string) => void;
+    readonly validate?: MaybeAsyncFn<string, boolean>;
 }): JSX.Element {
     const [error, setError] = useState(false);
     const [state, setState] = useState(value);

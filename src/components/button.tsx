@@ -11,11 +11,11 @@ export default function Button({
     ariaLabel,
     onClick,
 }: PropsWithChildren<{
-    icon?: IconType;
-    buttonClass?: string;
-    iconClass?: string;
-    ariaLabel?: string;
-    onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+    readonly icon?: IconType;
+    readonly buttonClass?: string;
+    readonly iconClass?: string;
+    readonly ariaLabel?: string;
+    readonly onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }>): JSX.Element {
     const iconContext = useMemo(
         () => ({className: [styles.icon, iconClass ?? ''].join(' ')}),

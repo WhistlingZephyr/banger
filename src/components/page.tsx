@@ -6,8 +6,8 @@ export default function Page({
     containerClass,
     contentClass,
 }: PropsWithChildren<{
-    containerClass?: string;
-    contentClass?: string;
+    readonly containerClass?: string;
+    readonly contentClass?: string;
 }>): JSX.Element {
     return (
         <main className={[styles.page, containerClass ?? ''].join(' ')}>

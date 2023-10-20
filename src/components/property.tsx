@@ -8,11 +8,11 @@ export default function Property({
     callback,
     validate,
 }: {
-    label: string;
-    disabled: boolean;
-    value?: string;
-    callback?: (text: string) => void;
-    validate?: (text: string) => boolean;
+    readonly label: string;
+    readonly disabled: boolean;
+    readonly value?: string;
+    readonly callback?: (text: string) => void;
+    readonly validate?: (text: string) => boolean;
 }): JSX.Element {
     const [error, setError] = useState(false);
     const id = useId();

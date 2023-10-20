@@ -4,8 +4,8 @@ export default function Button({
     className,
     url,
 }: {
-    className?: string;
-    url: string;
+    readonly className?: string;
+    readonly url: string;
 }): JSX.Element {
     return (
         <a href={url} className={[styles.link, className ?? ''].join(' ')}>

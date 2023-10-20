@@ -40,7 +40,7 @@ export function BangsDataGrid(): JSX.Element {
             })),
         [bangs],
     );
-    function Actions({bang}: {bang: CustomBang}): JSX.Element {
+    function Actions({bang}: {readonly bang: CustomBang}): JSX.Element {
         return (
             <div className={styles.actionsContainer}>
                 <button
@@ -143,6 +143,7 @@ export function BangsDataGrid(): JSX.Element {
                         columns={[
                             {
                                 id: 'name',
+                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdSegment
@@ -154,6 +155,7 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'shortcut',
+                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdShortcut
@@ -165,6 +167,7 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'domain',
+                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdDomain
@@ -176,6 +179,7 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'actions',
+                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdTune className={styles.headerIcon} />
@@ -183,7 +187,8 @@ export function BangsDataGrid(): JSX.Element {
                                     </div>,
                                 ),
                                 formatter: (cell: CustomBang) =>
-                                    _(<Actions bang={cell} />),
+                                    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+                                    _(<Actions bang={cell} />), // eslint-disable-line @typescript-eslint/no-unsafe-call
                             },
                         ]}
                         width="100%"

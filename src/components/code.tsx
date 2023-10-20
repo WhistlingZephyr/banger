@@ -5,7 +5,7 @@ export default function Code({
     className,
     children,
 }: PropsWithChildren<{
-    className?: string;
+    readonly className?: string;
 }>): JSX.Element {
     return (
         <code className={[styles.code, className ?? ''].join(' ')}>

@@ -15,5 +15,6 @@ module.exports = {
         "react/prop-types": "off",
         "import/no-unassigned-import": "off",
         "unicorn/prefer-top-level-await": "off",
+        "@typescript-eslint/member-ordering": "off"
     },
 };

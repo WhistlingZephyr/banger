@@ -14,9 +14,9 @@ export default function BangModal({
     contentLabel,
     children,
 }: PropsWithChildren<{
-    isOpen: boolean;
-    setIsOpen: Dispatch<SetStateAction<boolean>>;
-    contentLabel: string;
+    readonly isOpen: boolean;
+    readonly setIsOpen: Dispatch<SetStateAction<boolean>>;
+    readonly contentLabel: string;
 }>): JSX.Element {
     const closeModal = (): void => {
         setIsOpen(false);

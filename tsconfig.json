@@ -1,7 +1,7 @@
 {
-    "extends": "@tsconfig/recommended/tsconfig.json",
+    "extends": "./node_modules/@tsconfig/recommended/tsconfig.json",
     "compilerOptions": {
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "lib": ["DOM", "DOM.Iterable", "ESNext", "ES2015"],
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",

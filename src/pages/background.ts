@@ -1,5 +1,5 @@
-import {loadBackend, backendId} from '../helpers/bang';
+import {loadBackend} from '../helpers/bang';
 
 (async (): Promise<void> => {
-    loadBackend(await backendId.getValue());
+    loadBackend();
 })();

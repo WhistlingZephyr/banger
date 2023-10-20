@@ -1,4 +1,3 @@
-import Brave from '../backends/brave';
 import DuckDuckGo from '../backends/ddg';
 import type {BangConfig, CustomBang} from '../models/backend';
 import ConfigBangs from '../models/config-bangs';
@@ -7,16 +6,8 @@ import {isUrl} from '../utils/url';
 import {engineName} from './search';
 import time from '@/utils/time';
 
-export type Backend = DuckDuckGo | Brave;
-export type BackendId = 'brave' | 'ddg';
-let backend: DuckDuckGo | Brave;
-
-export const backendId = new ConfigValue(
-    'backend',
-    'ddg',
-    value => value === 'brave' || value === 'ddg',
-    loadBackend,
-);
+export type Backend = DuckDuckGo;
+let backend: DuckDuckGo;
 
 export function getBackendInstance(): Backend {
     return backend;
@@ -69,13 +60,12 @@ export const bangConfig: BangConfig = {
     ),
 };
 
-export async function loadBackend(id: string): Promise<void> {
+export async function loadBackend(): Promise<void> {
     if (backend) {
         backend.unhook();
     }
 
-    backend =
-        id === 'brave' ? new Brave(bangConfig) : new DuckDuckGo(bangConfig);
+    backend = new DuckDuckGo(bangConfig);
     await backend.fetch(1000);
     backend.hook();
 }

@@ -1,4 +1,4 @@
-import {backendId, bangConfig} from './bang';
+import {bangConfig} from './bang';
 import {type BangConfig, type CustomBang} from '@/models/backend';
 
 export type ConfigData = Record<
@@ -9,32 +9,26 @@ export type ConfigData = Record<
 };
 
 export async function getConfig(): Promise<ConfigData> {
-    const result: ConfigData = {
-        ...Object.fromEntries(
-            await Promise.all(
-                Object.entries(bangConfig).map(async ([key, config]) => [
-                    key,
-                    await config.getValue(),
-                ]),
-            ),
+    const result: ConfigData = Object.fromEntries(
+        await Promise.all(
+            Object.entries(bangConfig).map(async ([key, config]) => [
+                key,
+                await config.getValue(),
+            ]),
         ),
-        backendId: await backendId.getValue(),
-    };
+    );
     return result;
 }
 
 export async function getDefaultConfig(): Promise<ConfigData> {
-    const result: ConfigData = {
-        ...Object.fromEntries(
-            await Promise.all(
-                Object.entries(bangConfig).map(async ([key, config]) => [
-                    key,
-                    await config.getDefaultValue(),
-                ]),
-            ),
+    const result: ConfigData = Object.fromEntries(
+        await Promise.all(
+            Object.entries(bangConfig).map(async ([key, config]) => [
+                key,
+                await config.getDefaultValue(),
+            ]),
         ),
-        backendId: await backendId.getDefaultValue(),
-    };
+    );
     return result;
 }
 
@@ -54,19 +48,6 @@ export async function validateConfig(
                             // @ts-expect-error Seems like TypeScript won't allow this easily.
                         ].validate(value)
                     ) {
-                        return;
-                    }
-
-                    return (
-                        'Invalid value for key ' +
-                        JSON.stringify(key) +
-                        ': ' +
-                        JSON.stringify(value)
-                    );
-                }
-
-                if (key === 'backendId') {
-                    if (await backendId.validate(value as string)) {
                         return;
                     }
 
@@ -98,10 +79,7 @@ export async function updateConfig(
     return (
         await Promise.all(
             Object.entries(config).map(async ([key, value]) =>
-                (await (key === 'backendId'
-                    ? backendId
-                    : bangConfig[key as keyof BangConfig]
-                ).updateValue(
+                (await bangConfig[key as keyof BangConfig].updateValue(
                     // @ts-expect-error Seems like TypeScript won't allow this easily.
                     value,
                     validate,

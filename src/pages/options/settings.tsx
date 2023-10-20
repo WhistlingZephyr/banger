@@ -5,16 +5,11 @@ import Button from '@/components/button';
 import Page from '@/components/page';
 import Select from '@/components/select';
 import Input from '@/components/input';
-import {backendId, bangConfig, bangConfig as config} from '@/helpers/bang';
+import {bangConfig, bangConfig as config} from '@/helpers/bang';
 import {listEngines} from '@/helpers/search';
 import {usePromise} from '@/hooks/use-promise';
 import {useConfig} from '@/hooks/use-config';
 import time from '@/utils/time';
-
-const databases = [
-    {value: 'ddg', label: 'DuckDuckGo'},
-    {value: 'brave', label: 'Brave'},
-];
 
 export default function SettingsPage(): JSX.Element {
     const [callbacks, setCallbacks] = useState<Map<symbol, () => void>>(
@@ -27,7 +22,6 @@ export default function SettingsPage(): JSX.Element {
         bangConfig.engineName,
         setCallbacks,
     );
-    const [backend, setBackendState] = useConfig(backendId, setCallbacks);
     const [luckyBangUrl, setLuckyBangUrlState] = useConfig(
         config.luckyBangUrl,
         setCallbacks,
@@ -83,7 +77,6 @@ export default function SettingsPage(): JSX.Element {
             <div className={styles.settingsContainer}>
                 {enginesList &&
                     currentEngine &&
-                    backend &&
                     luckyBangUrl &&
                     siteFormat &&
                     bangPrefix &&
@@ -104,20 +97,6 @@ export default function SettingsPage(): JSX.Element {
                                 }
                                 callback={setCurrentEngineState}
                                 defaultItem={currentEngine}
-                            />
-                            <Select
-                                items={databases}
-                                label="Bang database to use"
-                                getItemLabel={(item): string => item.label}
-                                getItemValue={(item): string =>
-                                    item?.value ?? 'Invalid'
-                                }
-                                callback={(item): void => {
-                                    setBackendState(item.value);
-                                }}
-                                defaultItem={databases.find(
-                                    item => item.value === backend,
-                                )}
                             />
                             <Input
                                 label="(Super) lucky bang URL"

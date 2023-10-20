@@ -11,7 +11,6 @@ import superLuckyBangs from './backend/super-lucky-bangs';
 import superMixedSiteBangs from './backend/super-mixed-site-bangs';
 import {type Backend, bangConfig} from '@/helpers/bang';
 import DuckDuckGo from '@/backends/ddg';
-import Brave from '@/backends/brave';
 
 vi.mock(
     '../src/models/config-bangs.ts',
@@ -73,12 +72,4 @@ describe('DuckDuckGo bangs', () => {
     registerCleanup();
     testCommon(runTester);
     relativeBangs(runTester);
-});
-
-describe('Brave bangs', () => {
-    const backend = new Brave(bangConfig);
-    const runTester = createTester(backend);
-    fetchBackend(backend);
-    registerCleanup();
-    testCommon(runTester);
 });

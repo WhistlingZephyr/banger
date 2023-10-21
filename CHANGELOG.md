@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.31](https://github.com/WhistlingZephyr/banger/compare/v0.2.30...v0.2.31) (2023-10-21)
+
+
+### Features
+
+* make case-sensitivity opt-in ([1130ad3](https://github.com/WhistlingZephyr/banger/commit/1130ad39fae6e602464d0427d3cef272bd3ef63d))
+* remove Brave bangs ([935aaec](https://github.com/WhistlingZephyr/banger/commit/935aaecfba4bcf7dc89c5cada6a7aa1a6e075087))
+
+
+### Bug Fixes
+
+* update deps & migrate ([a772735](https://github.com/WhistlingZephyr/banger/commit/a772735df598f26ca226d494a7e1184124c617c8))
+
 ### [0.2.30](https://github.com/WhistlingZephyr/banger/compare/v0.2.29...v0.2.30) (2023-01-20)
 
 

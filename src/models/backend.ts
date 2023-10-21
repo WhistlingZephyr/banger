@@ -21,7 +21,8 @@ export type BangConfig = Record<
     | 'multiBangDelim'
     | 'multiSiteBangDelim'
     | 'engineName'
-    | 'cacheLifetime',
+    | 'cacheLifetime'
+    | 'caseSensitive',
     ConfigValue
 > & {customBangs: ConfigBangs<CustomBang>};
 
@@ -168,9 +169,13 @@ export default abstract class Backend<T> {
         const orOperator = await this.bangConfig.orOperator.getValue();
         const siteFormat = await this.bangConfig.siteFormat.getValue();
         const customBangs = await this.bangConfig.customBangs.getValue();
+        const caseSensitive =
+            (await this.bangConfig.caseSensitive.getValue()) === 'true';
         const getBang = (shortcut: string): CustomBang | Bang | undefined => {
-            const customBang = customBangs.find(
-                bang => bang.shortcut === shortcut,
+            const customBang = customBangs.find(bang =>
+                caseSensitive
+                    ? bang.shortcut === shortcut
+                    : bang.shortcut.toLowerCase() === shortcut.toLowerCase(),
             );
             if (customBang) {
                 if (customBang.url) {
@@ -183,7 +188,8 @@ export default abstract class Backend<T> {
                 return customBang;
             }
 
-            const bangIndex = this.bangMap[shortcut];
+            const bangIndex =
+                this.bangMap[caseSensitive ? shortcut : shortcut.toLowerCase()];
             if (!bangIndex) {
                 return;
             }

@@ -36,6 +36,9 @@ export const bangConfig: BangConfig = {
     multiBangDelim: new ConfigValue('multi-bang-delim', ';', validate),
     multiSiteBangDelim: new ConfigValue('multi-site-bang-delim', ',', validate),
     engineName,
+    caseSensitive: new ConfigValue('case-sensitive', 'false', (value: string) =>
+        ['true', 'false'].includes(value),
+    ),
     customBangs: new ConfigBangs<CustomBang>(
         'custom-bangs',
         [

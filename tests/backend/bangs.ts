@@ -17,6 +17,13 @@ export default function bangs(runTester: TestRunner): void {
                 'https://developer.mozilla.org/search?q=test',
             ]);
         });
+        it('should resolve case insensitively', async () => {
+            await runTester('!G', ['url', 'https://www.google.com/']);
+            await runTester('!G test', [
+                'url',
+                'https://www.google.com/search?q=test',
+            ]);
+        });
         it('should resolve multiple domains', async () => {
             await runTester(
                 '!g;mdn',

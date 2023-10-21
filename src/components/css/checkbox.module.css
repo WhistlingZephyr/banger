@@ -1,0 +1,41 @@
+.container {
+    height: 2rem;
+    max-height: 2rem;
+    width: 17rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+}
+
+.root {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    background-color: var(--control-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.root:hover {
+    background-color: var(--control-hover-color);
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    color: var(--foreground-color);
+}
+
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}

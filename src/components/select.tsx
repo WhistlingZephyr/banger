@@ -75,8 +75,8 @@ export default function Select<T>({
                     <ul className={styles.selectList} {...getMenuProps()}>
                         {isOpen &&
                             items.map((item, index) => (
+                                // eslint-disable-next-line react/jsx-key
                                 <li
-                                    key={getItemValue(item)}
                                     className={[
                                         styles.selectItem,
                                         highlightedIndex === index

@@ -4,6 +4,18 @@ import {bangConfig} from '@/helpers/bang';
 
 export default function configUpdates(runTester: TestRunner): void {
     describe('Config updates', () => {
+        it('should update case-sensitivity', async () => {
+            await expect(
+                bangConfig.caseSensitive.updateValue('true'),
+            ).resolves.toBe(true);
+            await runTester('!G', ['search', '!G']);
+            await runTester('!g', ['url', 'https://www.google.com/']);
+            await runTester('!G test', ['search', '!G test']);
+            await runTester('!g test', [
+                'url',
+                'https://www.google.com/search?q=test',
+            ]);
+        });
         it('should update bang prefix', async () => {
             await expect(bangConfig.bangPrefix.updateValue('#')).resolves.toBe(
                 true,

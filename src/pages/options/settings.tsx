@@ -10,6 +10,7 @@ import {listEngines} from '@/helpers/search';
 import {usePromise} from '@/hooks/use-promise';
 import {useConfig} from '@/hooks/use-config';
 import time from '@/utils/time';
+import Checkbox from '@/components/checkbox';
 
 export default function SettingsPage(): JSX.Element {
     const [callbacks, setCallbacks] = useState<Map<symbol, () => void>>(
@@ -20,6 +21,10 @@ export default function SettingsPage(): JSX.Element {
     );
     const [currentEngine, setCurrentEngineState] = useConfig(
         bangConfig.engineName,
+        setCallbacks,
+    );
+    const [caseSensitive, setCaseSensitive] = useConfig(
+        bangConfig.caseSensitive,
         setCallbacks,
     );
     const [luckyBangUrl, setLuckyBangUrlState] = useConfig(
@@ -77,6 +82,7 @@ export default function SettingsPage(): JSX.Element {
             <div className={styles.settingsContainer}>
                 {enginesList &&
                     currentEngine &&
+                    caseSensitive &&
                     luckyBangUrl &&
                     siteFormat &&
                     bangPrefix &&
@@ -97,6 +103,17 @@ export default function SettingsPage(): JSX.Element {
                                 }
                                 callback={setCurrentEngineState}
                                 defaultItem={currentEngine}
+                            />
+                            <Checkbox
+                                label="Case sensitivity"
+                                defaultChecked={caseSensitive === 'true'}
+                                callback={(value: boolean): void => {
+                                    if (value) {
+                                        setCaseSensitive('true');
+                                    } else {
+                                        setCaseSensitive('false');
+                                    }
+                                }}
                             />
                             <Input
                                 label="(Super) lucky bang URL"

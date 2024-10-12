@@ -5,8 +5,8 @@
         "yzhang.markdown-all-in-one",
         "christian-kohler.npm-intellisense",
         "samverschueren.linter-xo",
-        "zixuanchen.vitest-explorer",
         "christian-kohler.path-intellisense",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "vitest.explorer"
     ]
 }

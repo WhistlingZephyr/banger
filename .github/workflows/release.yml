@@ -31,6 +31,7 @@ jobs:
       - name: Submit
         run: |
           pnpm exec amo-upload \
+          sign \
           --api-key ${{ secrets.WEB_EXT_API_KEY }} \
           --api-secret ${{ secrets.WEB_EXT_API_SECRET }} \
           --addon-id ${{ secrets.ADDON_ID }} \

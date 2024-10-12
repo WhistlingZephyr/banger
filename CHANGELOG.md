@@ -1,6 +1,19 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.2.33](https://github.com/WhistlingZephyr/banger/compare/v0.2.32...v0.2.33) (2024-10-12)
+
+
+### Bug Fixes
+
+* **ci:** migrate amo-upload usage ([aeb417d](https://github.com/WhistlingZephyr/banger/commit/aeb417d83dd5e3114b7ab5359eaba9e91cd6c815))
+* **ci:** refactor CI ([01cd1b6](https://github.com/WhistlingZephyr/banger/commit/01cd1b6f1fd0f217491a8130a227b7801dc1308c))
+* **dev:** replace standard-version with commit-and-tag-version ([859363d](https://github.com/WhistlingZephyr/banger/commit/859363d2d221c2db9961a67a02e6d77c9811586d))
+* **docs:** typo ([d42c142](https://github.com/WhistlingZephyr/banger/commit/d42c1425b6b152c712b14dc0edaf9aa4fe424d9b))
+* **ui:** fix popup margin ([d98c73f](https://github.com/WhistlingZephyr/banger/commit/d98c73f83d28c596698ca2d6d732043d433cdaec))
+* **ui:** remove brave backend from UI (following v0.2.31) ([04b35af](https://github.com/WhistlingZephyr/banger/commit/04b35afeea3480dd78195b8f3fafc23360bf1672))
+* upgrade deps & migrate ([5d019f8](https://github.com/WhistlingZephyr/banger/commit/5d019f8cb384842ea13da1145d2880b3026b97c4))
 
 ### [0.2.32](https://github.com/WhistlingZephyr/banger/compare/v0.2.31...v0.2.32) (2023-10-21)
 

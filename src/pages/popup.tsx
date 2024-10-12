@@ -21,11 +21,6 @@ function App(): JSX.Element {
             {config && (
                 <div className={styles.textContainer}>
                     <p className={styles.label}>Search: {config.engineName}</p>
-
-                    <p className={styles.label}>
-                        Backend:{' '}
-                        {config.backendId === 'ddg' ? 'DuckDuckGo' : 'Brave'}
-                    </p>
                 </div>
             )}
             <div className={styles.buttonContainer}>

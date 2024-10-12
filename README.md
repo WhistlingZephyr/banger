@@ -28,7 +28,7 @@ Due to a technical limitation with the Web Extensions API, Banger can't direct s
 ### What's a lucky bang?
 Lucky bang is a bang without a specified search engine. Currently, it's only supported in DuckDuckGo (but with Banger you can use it anywhere) and you can use it by typing a `!` followed by a whitespace and your search query. It allows you to directly open up the first search result instead of having to manually click it after searching.
 
-Officially, lucky lang doesn't have a name. Banger calls it `lucky lang` because of this feature similar to Google's `I'm feeling lucky` button.
+Officially, lucky bang doesn't have a name. Banger calls it `lucky bang` because of this feature similar to Google's `I'm feeling lucky` button.
 
 Note: You can configure what symbol to use for the Lucky Bang on Banger's settings page.
 

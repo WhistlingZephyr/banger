@@ -111,7 +111,7 @@ export default abstract class Backend<T> {
             bang: await this.bangConfig.bangPrefix.getValue(),
         };
         for (const key in prefixes) {
-            if (Object.prototype.hasOwnProperty.call(prefixes, key)) {
+            if (Object.hasOwn(prefixes, key)) {
                 const prefix = prefixes[key as keyof typeof prefixes];
                 const type = escapeStringRegexp(prefix);
                 const patterns =
@@ -154,6 +154,7 @@ export default abstract class Backend<T> {
             this.#processRetries++;
             return new Promise((resolve, reject) => {
                 setTimeout(async () => {
+                    // eslint-disable-next-line @typescript-eslint/use-unknown-in-catch-callback-variable
                     this.processQuery(query).then(resolve).catch(reject);
                 }, 500);
             });

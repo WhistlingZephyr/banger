@@ -3,13 +3,13 @@ import styles from './css/property.module.css';
 
 export default function Property({
     label,
-    disabled,
+    isDisabled: disabled,
     value,
     callback,
     validate,
 }: {
     readonly label: string;
-    readonly disabled: boolean;
+    readonly isDisabled: boolean;
     readonly value?: string;
     readonly callback?: (text: string) => void;
     readonly validate?: (text: string) => boolean;

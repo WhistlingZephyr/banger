@@ -65,8 +65,8 @@ export default function Select<T>({
                             {selectedItem
                                 ? getItemLabel(selectedItem)
                                 : defaultItem === undefined
-                                ? 'Select'
-                                : getItemLabel(defaultItem)}
+                                  ? 'Select'
+                                  : getItemLabel(defaultItem)}
                         </span>
                         {isOpen ? <MdExpandLess /> : <MdExpandMore />}
                     </div>

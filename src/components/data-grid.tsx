@@ -143,7 +143,6 @@ export function BangsDataGrid(): JSX.Element {
                         columns={[
                             {
                                 id: 'name',
-                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdSegment
@@ -155,7 +154,6 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'shortcut',
-                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdShortcut
@@ -167,7 +165,6 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'domain',
-                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdDomain
@@ -179,7 +176,6 @@ export function BangsDataGrid(): JSX.Element {
                             },
                             {
                                 id: 'actions',
-                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                                 name: _(
                                     <div>
                                         <MdTune className={styles.headerIcon} />
@@ -187,13 +183,11 @@ export function BangsDataGrid(): JSX.Element {
                                     </div>,
                                 ),
                                 formatter: (cell: CustomBang) =>
-                                    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-                                    _(<Actions bang={cell} />), // eslint-disable-line @typescript-eslint/no-unsafe-call
+                                    _(<Actions bang={cell} />),
                             },
                         ]}
                         width="100%"
                         pagination={{
-                            enabled: true,
                             limit: 10,
                         }}
                     />
@@ -205,7 +199,7 @@ export function BangsDataGrid(): JSX.Element {
                         <div className={styles.modalPropertyContainer}>
                             <Property
                                 label="Name*"
-                                disabled={!isEditing}
+                                isDisabled={!isEditing}
                                 value={currentBang?.name}
                                 callback={(value): void => {
                                     if (currentBang) {
@@ -215,7 +209,7 @@ export function BangsDataGrid(): JSX.Element {
                             />
                             <Property
                                 label="Shortcut*"
-                                disabled={!isEditing}
+                                isDisabled={!isEditing}
                                 value={currentBang?.shortcut}
                                 callback={(value): void => {
                                     if (currentBang) {
@@ -225,7 +219,7 @@ export function BangsDataGrid(): JSX.Element {
                             />
                             <Property
                                 label="Domain*"
-                                disabled={!isEditing}
+                                isDisabled={!isEditing}
                                 value={currentBang?.domain}
                                 callback={(value): void => {
                                     if (currentBang) {
@@ -235,7 +229,7 @@ export function BangsDataGrid(): JSX.Element {
                             />
                             <Property
                                 label="URL"
-                                disabled={!isEditing}
+                                isDisabled={!isEditing}
                                 value={currentBang?.url}
                                 callback={(value): void => {
                                     if (currentBang) {

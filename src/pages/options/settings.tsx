@@ -106,7 +106,7 @@ export default function SettingsPage(): JSX.Element {
                             />
                             <Checkbox
                                 label="Case sensitivity"
-                                defaultChecked={caseSensitive === 'true'}
+                                isDefaultChecked={caseSensitive === 'true'}
                                 callback={(value: boolean): void => {
                                     if (value) {
                                         setCaseSensitive('true');

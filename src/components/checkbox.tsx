@@ -5,11 +5,11 @@ import styles from './css/checkbox.module.css';
 
 export default function Checkbox({
     label,
-    defaultChecked,
+    isDefaultChecked: defaultChecked,
     callback,
 }: {
     readonly label: string;
-    readonly defaultChecked?: boolean;
+    readonly isDefaultChecked?: boolean;
     readonly callback?: (text: boolean) => void;
 }): JSX.Element {
     const id = useId();
